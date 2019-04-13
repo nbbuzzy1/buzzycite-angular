@@ -9,6 +9,7 @@ import { AddRegionalVolumeComponent } from './inputs/add-regional-volume/add-reg
 import { AddOhioVolumeComponent } from './inputs/add-ohio-volume/add-ohio-volume.component';
 import { AddWebciteComponent } from './inputs/add-webcite/add-webcite.component';
 import { AddPinpointComponent } from './inputs/add-pinpoint/add-pinpoint.component';
+import { AddYearComponent } from './inputs/add-year/add-year.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddPinpointComponent } from './inputs/add-pinpoint/add-pinpoint.compone
     AddRegionalVolumeComponent,
     AddOhioVolumeComponent,
     AddWebciteComponent,
-    AddPinpointComponent
+    AddPinpointComponent,
+    AddYearComponent
   ],
   imports: [
     BrowserModule
