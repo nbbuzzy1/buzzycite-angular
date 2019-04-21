@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-parties',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-parties.component.css']
 })
 export class AddPartiesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  @Output() partyOneCreated = new EventEmitter<string>();
+  @Output() partyTwoCreated = new EventEmitter<string>();
+  partyOne: string = '';
+  partyTwo: string = '';
+  sendParty() {
+    this.partyOneCreated.emit(this.partyOne)
+    this.partyTwoCreated.emit(this.partyTwo)
   }
+  ngOnInit() {
 
+  }
 }

@@ -1,7 +1,9 @@
 <h1>Ohio Supreme Court - Post</h1>
 <div class="container">
   <div>
-    <app-add-parties></app-add-parties>
+    <app-add-parties
+      (partyOneCreated)="partyOne=$event"
+      (partyTwoCreated)="partyTwo=$event"></app-add-parties>
   </div>
   <div>
     <app-add-ohio-volume></app-add-ohio-volume>
@@ -18,4 +20,6 @@
   <div>
     <app-add-pinpoint></app-add-pinpoint>
   </div>
+  {{ partyOne }}
+  {{ partyTwo }}
 </div>

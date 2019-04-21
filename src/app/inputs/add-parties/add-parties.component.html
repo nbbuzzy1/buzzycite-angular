@@ -1,7 +1,18 @@
 <div>
-  <input placeholder="Party One">
-</div>
-<div>
-  <input placeholder="Party Two">
+  <input 
+    placeholder="Party One"
+    type="text"    
+    [(ngModel)]="partyOne"
+    (change)="sendParty()"
+  >
 </div>
 
+<div>
+  <input 
+    placeholder="Party Two"
+    type="text"
+    [(ngModel)]="partyTwo"
+    (change)="sendParty()"
+  > 
+  <button (click)="sendParty()">Add Parties</button>
+</div>

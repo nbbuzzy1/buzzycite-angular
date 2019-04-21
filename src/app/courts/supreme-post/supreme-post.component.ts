@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./supreme-post.component.css']
 })
 export class SupremePostComponent implements OnInit {
-
+  citation: string;
   constructor() { }
 
   ngOnInit() {
   }
-
+  onPartyOneAdded(partyOne: string) {
+    console.log(partyOne);
+  }
 }
