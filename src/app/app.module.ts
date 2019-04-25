@@ -29,15 +29,8 @@ import { AddMonthDayComponent } from './inputs/add-month-day/add-month-day.compo
 import { AddOhioAppVolumeComponent } from './inputs/add-ohio-app-volume/add-ohio-app-volume.component';
 import { AddRegionalAppVolumeComponent } from './inputs/add-regional-app-volume/add-regional-app-volume.component';
 import { AddWestlawLexisComponent } from './inputs/add-westlaw-lexis/add-westlaw-lexis.component';
-import { CitationComponent } from './shared/citation/citation.component';
-import { CitationListFiltersComponent } from './shared/citation-list-filters/citation-list-filters.component';
-import { CitationListItemComponent } from './citation/citation-list-item/citation-list-item.component';
-import { CiteCaseComponent } from './citation/cite-case/cite-case.component';
-import { CopyCitationComponent } from './citation/copy-citation/copy-citation.component';
-import { CustomCitationButtonComponent } from './citation/custom-citation-button/custom-citation-button.component';
-import { RemoveCitationComponent } from './citation/remove-citation/remove-citation.component';
-import { SaveCitationComponent } from './citation/save-citation/save-citation.component';
-import { SaveModalComponent } from './citation/save-modal/save-modal.component';
+import { CitationComponent } from './citation/citation/citation.component';
+import { CitationListFiltersComponent } from './citation/citation-list-filters/citation-list-filters.component';
 
 @NgModule({
   declarations: [
@@ -69,14 +62,7 @@ import { SaveModalComponent } from './citation/save-modal/save-modal.component';
     AddRegionalAppVolumeComponent,
     AddWestlawLexisComponent,
     CitationComponent,
-    CitationListFiltersComponent,
-    CitationListItemComponent,
-    CiteCaseComponent,
-    CopyCitationComponent,
-    CustomCitationButtonComponent,
-    RemoveCitationComponent,
-    SaveCitationComponent,
-    SaveModalComponent
+    CitationListFiltersComponent
   ],
   imports: [
     BrowserModule,
