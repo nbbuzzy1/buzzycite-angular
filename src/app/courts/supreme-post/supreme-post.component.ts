@@ -11,7 +11,4 @@ export class SupremePostComponent implements OnInit {
 
   ngOnInit() {
   }
-  onPartyOneAdded(partyOne: string) {
-    console.log(partyOne);
-  }
 }

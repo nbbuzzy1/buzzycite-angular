@@ -11,6 +11,11 @@ import { AddOhioVolumeComponent } from './inputs/add-ohio-volume/add-ohio-volume
 import { AddWebciteComponent } from './inputs/add-webcite/add-webcite.component';
 import { AddPinpointComponent } from './inputs/add-pinpoint/add-pinpoint.component';
 import { AddYearComponent } from './inputs/add-year/add-year.component';
+import { SupremePreComponent } from './courts/supreme-pre/supreme-pre.component';
+import { AppealPostPrintComponent } from './courts/appeal-post-print/appeal-post-print.component';
+import { AppealPostNonprintComponent } from './courts/appeal-post-nonprint/appeal-post-nonprint.component';
+import { AppealPreNonprintComponent } from './courts/appeal-pre-nonprint/appeal-pre-nonprint.component';
+import { AppealPrePrintComponent } from './courts/appeal-pre-print/appeal-pre-print.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { AddYearComponent } from './inputs/add-year/add-year.component';
     AddOhioVolumeComponent,
     AddWebciteComponent,
     AddPinpointComponent,
-    AddYearComponent
+    AddYearComponent,
+    SupremePreComponent,
+    AppealPostPrintComponent,
+    AppealPostNonprintComponent,
+    AppealPreNonprintComponent,
+    AppealPrePrintComponent
   ],
   imports: [
     BrowserModule,
