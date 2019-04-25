@@ -16,6 +16,13 @@ import { AppealPostPrintComponent } from './courts/appeal-post-print/appeal-post
 import { AppealPostNonprintComponent } from './courts/appeal-post-nonprint/appeal-post-nonprint.component';
 import { AppealPreNonprintComponent } from './courts/appeal-pre-nonprint/appeal-pre-nonprint.component';
 import { AppealPrePrintComponent } from './courts/appeal-pre-print/appeal-pre-print.component';
+import { AbbreviateTermComponent } from './pages/abbreviate-term/abbreviate-term.component';
+import { CitationListComponent } from './pages/citation-list/citation-list.component';
+import { CustomCitationComponent } from './pages/custom-citation/custom-citation.component';
+import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoadingPageComponent } from './pages/loading-page/loading-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +39,14 @@ import { AppealPrePrintComponent } from './courts/appeal-pre-print/appeal-pre-pr
     AppealPostPrintComponent,
     AppealPostNonprintComponent,
     AppealPreNonprintComponent,
-    AppealPrePrintComponent
+    AppealPrePrintComponent,
+    AbbreviateTermComponent,
+    CitationListComponent,
+    CustomCitationComponent,
+    DashboardPageComponent,
+    LoginPageComponent,
+    LoadingPageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
