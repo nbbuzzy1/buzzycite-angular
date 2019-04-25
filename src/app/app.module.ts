@@ -23,6 +23,12 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoadingPageComponent } from './pages/loading-page/loading-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { AddCountyComponent } from './inputs/add-county/add-county.component';
+import { AddDistrictComponent } from './inputs/add-district/add-district.component';
+import { AddMonthDayComponent } from './inputs/add-month-day/add-month-day.component';
+import { AddOhioAppVolumeComponent } from './inputs/add-ohio-app-volume/add-ohio-app-volume.component';
+import { AddRegionalAppVolumeComponent } from './inputs/add-regional-app-volume/add-regional-app-volume.component';
+import { AddWestlawLexisComponent } from './inputs/add-westlaw-lexis/add-westlaw-lexis.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +52,13 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     DashboardPageComponent,
     LoginPageComponent,
     LoadingPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    AddCountyComponent,
+    AddDistrictComponent,
+    AddMonthDayComponent,
+    AddOhioAppVolumeComponent,
+    AddRegionalAppVolumeComponent,
+    AddWestlawLexisComponent
   ],
   imports: [
     BrowserModule,
