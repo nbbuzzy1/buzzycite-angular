@@ -3,7 +3,8 @@
   <div>
     <app-add-parties
       (partyOneCreated)="partyOne=$event"
-      (partyTwoCreated)="partyTwo=$event"></app-add-parties>
+      (partyTwoCreated)="partyTwo=$event">
+    </app-add-parties>
   </div>
   <div>
     <app-add-ohio-volume></app-add-ohio-volume>
@@ -20,5 +21,7 @@
   <div>
     <app-add-pinpoint></app-add-pinpoint>
   </div>
-  {{ partyOne + partyTwo }}
+  <div>
+    <app-citation></app-citation>
+  </div>
 </div>
