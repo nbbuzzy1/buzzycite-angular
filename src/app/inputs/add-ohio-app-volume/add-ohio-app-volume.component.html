@@ -1,3 +1,16 @@
-<p>
-  add-ohio-app-volume works!
-</p>
+<div>
+  <div>
+    <input required type="number" id="ohioAppVolume" placeholder="Ohio Volume" onChange={props.handleOhioVolume}/>
+  </div>
+  <div>
+    <select required id="ohioAppReporter">
+      <option value="">Ohio Reporter</option>
+      <option value="Ohio App.3d">Ohio App.3d</option>
+      <option value="Ohio App.2d">Ohio App.2d</option>
+      <option value="Ohio App.">Ohio App.</option>
+    </select>
+  </div>
+  <div>
+    <input required type="number" id="ohioAppFirstPage" placeholder="Ohio First Page" onChange={props.handleOhioFirstPage}/>
+  </div>
+</div>
