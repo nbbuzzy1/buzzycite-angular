@@ -2,9 +2,13 @@
 <div class="container">
   <div>
     <app-add-parties
-      (partyOneCreated)="partyOne=$event"
-      (partyTwoCreated)="partyTwo=$event">
+      (partyOneCreated)="onPartyOneAdded($event)"
+      (partyTwoCreated)="partyTwo = $event">
     </app-add-parties>
+    <!-- <app-add-parties
+      (partyOneCreated)="onPartyOneAdded($event)"
+      (partyTwoCreated)="partyTwo=$event">
+    </app-add-parties> -->
   </div>
   <div>
     <app-add-ohio-volume></app-add-ohio-volume>
