@@ -1,11 +1,26 @@
 <div>
-  <input placeholder="Ohio Volume">
+  <input 
+    placeholder="Ohio Volume"
+    type="number"
+    [(ngModel)]="ohioVolume"
+    (change)="sendOhioVolume()"
+  >
 </div>
 <div>
-  <input placeholder="Ohio Reporter">
+  <select 
+    [(ngModel)]="ohioReporter"
+    (change)="sendOhioReporter()">
+    <option value="">Ohio Reporter</option>
+    <option value="Ohio St.3d">Ohio St.3d</option>
+    <option value="Ohio St.2d">Ohio St.2d</option>
+    <option value="Ohio St.">Ohio St.</option>
+  </select>
 </div>
 <div>
-  <input placeholder="Ohio First Page">
+  <input 
+    placeholder="Ohio First Page"
+    [(ngModel)]="ohioFirstPage"
+    (change)="sendOhioFirstPage()">
 </div>
 
 

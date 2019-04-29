@@ -1,9 +1,24 @@
 <div>
-  <input placeholder="Regional Volume">
+  <input 
+    placeholder="Regional Volume"
+    type="number"
+    [(ngModel)]="regionalVolume"
+    (change)="sendRegionalVolume()"
+  >
 </div>
 <div>
-  <input placeholder="Regional Reporter">
+  <select 
+    [(ngModel)]="regionalReporter"
+    (change)="sendRegionalReporter()">
+    <option value="">Regional Reporter</option>
+    <option value="N.E.3d">N.E.3d</option>
+    <option value="N.E.2d">N.E.2d</option>
+    <option value="N.E.">N.E.</option>
+  </select>
 </div>
 <div>
-  <input placeholder="Regional First Page">
+  <input 
+    placeholder="Regional First Page"
+    [(ngModel)]="regionalFirstPage"
+    (change)="sendRegionalFirstPage()">
 </div>

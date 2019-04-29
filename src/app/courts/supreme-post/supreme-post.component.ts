@@ -9,6 +9,12 @@ export class SupremePostComponent implements OnInit {
   partyOne: string;
   partyTwo: string;
   citation: string;
+  ohioVolume: number;
+  ohioReporter: string = '';
+  ohioFirstPage: number;
+  regionalVolume: number;
+  regionalReporter: string = '';
+  regionalFirstPage: number;
   constructor() { }
 
   ngOnInit() {

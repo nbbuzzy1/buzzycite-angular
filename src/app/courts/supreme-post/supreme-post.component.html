@@ -11,10 +11,19 @@
     </app-add-parties> -->
   </div>
   <div>
-    <app-add-ohio-volume></app-add-ohio-volume>
+    <app-add-ohio-volume
+      (ohioVolumeCreated)="ohioVolume = $event"
+      (ohioReporterCreated)="ohioReporter = $event"
+      (ohioFirstPageCreated)="ohioFirstPage = $event"
+    >
+    </app-add-ohio-volume>
   </div>
   <div>
-    <app-add-regional-volume></app-add-regional-volume>
+    <app-add-regional-volume
+      (regionalVolumeCreated)="regionalVolume = $event"
+      (regionalReporterCreated)="regionalReporter = $event"
+      (regionalFirstPageCreated)="regionalFirstPage = $event"
+    ></app-add-regional-volume>
   </div>
   <div>
     <app-add-webcite></app-add-webcite>
