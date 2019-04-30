@@ -1,1 +1,8 @@
-<input placeholder="Year">
+<div>
+  <input 
+    placeholder="Year"
+    type="number"    
+    [(ngModel)]="year"
+    (change)="sendYear()"
+  >
+</div>

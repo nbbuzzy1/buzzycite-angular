@@ -1,1 +1,8 @@
-<input placeholder="Webcite">
+<div>
+  <input 
+    placeholder="Webcite"
+    type="number"    
+    [(ngModel)]="webcite"
+    (change)="sendWebcite()"
+  >
+</div>

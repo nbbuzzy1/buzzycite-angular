@@ -1,2 +1,2 @@
-<button>Cite Case</button>
-<p>Sample Citation</p>
+<button (click)="showCitation()">Cite Case</button>
+<p *ngIf="citationStatus">{{ displayCitation }}</p>

@@ -2,13 +2,9 @@
 <div class="container">
   <div>
     <app-add-parties
-      (partyOneCreated)="onPartyOneAdded($event)"
+      (partyOneCreated)="partyOne = $event"
       (partyTwoCreated)="partyTwo = $event">
     </app-add-parties>
-    <!-- <app-add-parties
-      (partyOneCreated)="onPartyOneAdded($event)"
-      (partyTwoCreated)="partyTwo=$event">
-    </app-add-parties> -->
   </div>
   <div>
     <app-add-ohio-volume
@@ -26,15 +22,32 @@
     ></app-add-regional-volume>
   </div>
   <div>
-    <app-add-webcite></app-add-webcite>
+    <app-add-webcite
+      (webciteCreated)="webcite = $event"
+    ></app-add-webcite>
   </div>
   <div>
-    <app-add-year></app-add-year>
+    <app-add-year
+      (yearCreated)="year = $event"
+    ></app-add-year>
   </div>
   <div>
     <app-add-pinpoint></app-add-pinpoint>
   </div>
-  <div>
-    <app-citation></app-citation>
-  </div>
+  <button 
+    (click)="createCitation(
+      partyOne,
+      partyTwo, 
+      ohioVolume, 
+      ohioReporter,
+      ohioFirstPage,
+      regionalVolume,
+      regionalReporter,
+      regionalFirstPage,
+      webcite,
+      year
+      )"
+    >Cite Case
+  </button>
+  <p *ngIf="citation">{{ citation }}</p>
 </div>

@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-webcite',
   templateUrl: './add-webcite.component.html',
   styleUrls: ['./add-webcite.component.css']
 })
-export class AddWebciteComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class AddWebciteComponent {
+  @Output() webciteCreated = new EventEmitter<number>();
+  webcite: number;
+  sendWebcite() {
+    this.webciteCreated.emit(this.webcite)
   }
-
 }
