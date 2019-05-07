@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 // import { HttpModule } from '@angular/http';
-import { Routes, RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,16 +32,9 @@ import { AddRegionalAppVolumeComponent } from './inputs/add-regional-app-volume/
 import { AddWestlawLexisComponent } from './inputs/add-westlaw-lexis/add-westlaw-lexis.component';
 import { CitationComponent } from './citation/citation/citation.component';
 import { CitationListFiltersComponent } from './citation/citation-list-filters/citation-list-filters.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes: Routes =[
-  { path: '', component: DashboardPageComponent },
-  { path: 'supreme-post', component: SupremePostComponent},
-  { path: 'appeal-post-print', component: AppealPostPrintComponent},
-  { path: 'appeal-post-nonprint', component: AppealPostNonprintComponent},
-  { path: 'supreme-pre', component: SupremePreComponent},
-  { path: 'appeal-pre-print', component: AppealPrePrintComponent},
-  { path: 'appeal-pre-nonprint', component: AppealPreNonprintComponent},
-]
+
 
 @NgModule({
   declarations: [
@@ -80,7 +72,7 @@ const appRoutes: Routes =[
     BrowserModule,
     FormsModule,
     // HttpModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
