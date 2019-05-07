@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class SupremePostComponent {
   citation: string;
+  italicizedCitation: string;
+  remainingCitation: string;
   createCitation(
     partyOne,
     partyTwo, 
@@ -18,13 +20,9 @@ export class SupremePostComponent {
     regionalFirstPage,
     webcite,
     year) {
-    this.citation = 
-      `${partyOne} v. ${partyTwo}, ${ohioVolume} ${ohioReporter} ${ohioFirstPage}, ${year}-Ohio-${webcite}, ${regionalVolume} ${regionalReporter} ${regionalFirstPage}`;
-    return this.citation;
+    this.italicizedCitation = `${partyOne} v. ${partyTwo}`;
+    this.remainingCitation = `, ${ohioVolume} ${ohioReporter} ${ohioFirstPage}, ${year}-Ohio-${webcite}, ${regionalVolume} ${regionalReporter} ${regionalFirstPage}`;
+    this.citation = this.italicizedCitation + this.remainingCitation
+      // `${partyOne} v. ${partyTwo}, ${ohioVolume} ${ohioReporter} ${ohioFirstPage}, ${year}-Ohio-${webcite}, ${regionalVolume} ${regionalReporter} ${regionalFirstPage}`;
   }
 }
-
-  // onPartyOneAdded(addedPartyOne) {
-  //   this.partyOnee = addedPartyOne;
-  //   console.log(this.partyOnee)
-  // }
