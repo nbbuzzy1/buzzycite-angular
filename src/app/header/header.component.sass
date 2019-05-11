@@ -1,0 +1,42 @@
+@import '../../sass/_variables.sass'
+  
+.header 
+  background: $dark-grey
+
+.header__content 
+  align-items: center
+  display: flex
+  justify-content: space-around
+  padding: $s-size 0
+
+.header__title 
+  color: $gold
+  text-decoration: none
+  h1 
+    margin: 0
+  
+.header__citationList 
+  color: $gold
+  display: flex
+  margin: 0 3rem 0 auto
+  text-decoration: none
+
+.scaleLabel 
+  font-weight: bold
+  @media (max-width: 40rem) 
+    display: none
+  
+#headerScale 
+  margin-left: $s-size
+
+.header__button 
+  background: $dark-grey
+  border: 0
+  color: $gold
+  display: flex
+  height: 3rem
+  justify-content: flex-end
+  font-size: $font-size-medium
+  font-weight: bold
+  padding: 0
+  text-decoration: none

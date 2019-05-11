@@ -1,0 +1,35 @@
+.button 
+  background: $blue
+  border: 0
+  color: white
+  display: flex
+  height: 5rem
+  font-size: $font-size-large
+  font-weight: bold
+  justify-content: center
+  line-height: 1
+  margin: 0 auto
+  max-width: 100%
+  padding: $s-size
+  text-decoration: none
+  width: 20rem
+
+.button__layout 
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  margin: 0 auto $s-size auto
+
+.button:hover 
+  color: $gold
+
+.button--copy, .button--remove 
+  margin: 0 $s-size $s-size $s-size
+
+.button--save 
+  margin: 0 $s-size
+
+@media (max-width: 500px) 
+  .button--copy 
+    margin-bottom: $s-size
+  
