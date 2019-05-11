@@ -1,3 +1,21 @@
-<p>
-  abbreviate-term works!
-</p>
+<div class="content-container">
+  <div>
+    <h2>Abbreviate Term</h2>
+  </div>
+  <input 
+    autoFocus 
+    required
+    class="text-input" 
+    type="text" 
+    placeholder="Enter Term" 
+    [(ngModel)]="fullTerm"
+  />
+  <div>
+    <button 
+      class="button"
+      (click)="abbreviateTerm()"
+      >Abbreviate
+    </button>
+  </div>
+  <h3 *ngIf="abbTerm">{{ abbTerm }}</h3>
+</div>
