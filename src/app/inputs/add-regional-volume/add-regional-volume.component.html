@@ -2,12 +2,14 @@
   <input 
     placeholder="Regional Volume"
     type="number"
+    class="text-input" 
     [(ngModel)]="regionalVolume"
     (change)="sendRegionalVolume()"
   >
 </div>
 <div>
-  <select 
+  <select
+    class="select" 
     [(ngModel)]="regionalReporter"
     (change)="sendRegionalReporter()">
     <option value="">Regional Reporter</option>
@@ -20,6 +22,7 @@
   <input 
     placeholder="Regional First Page"
     type="number"
+    class="text-input" 
     [(ngModel)]="regionalFirstPage"
     (change)="sendRegionalFirstPage()">
 </div>

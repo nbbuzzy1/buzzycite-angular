@@ -1,40 +1,31 @@
-<h1>Ohio Supreme Court - Post</h1>
-<div class="container">
+<div class="content-container">
   <div>
-    <app-add-parties
-      (partyOneCreated)="partyOne = $event"
-      (partyTwoCreated)="partyTwo = $event">
-    </app-add-parties>
+    <h2>Ohio Supreme Court</h2>
+    <h3>May 1, 2002 and After</h3>
   </div>
-  <div>
-    <app-add-ohio-volume
-      (ohioVolumeCreated)="ohioVolume = $event"
-      (ohioReporterCreated)="ohioReporter = $event"
-      (ohioFirstPageCreated)="ohioFirstPage = $event"
-    >
-    </app-add-ohio-volume>
-  </div>
-  <div>
-    <app-add-regional-volume
-      (regionalVolumeCreated)="regionalVolume = $event"
-      (regionalReporterCreated)="regionalReporter = $event"
-      (regionalFirstPageCreated)="regionalFirstPage = $event"
-    ></app-add-regional-volume>
-  </div>
-  <div>
-    <app-add-webcite
-      (webciteCreated)="webcite = $event"
-    ></app-add-webcite>
-  </div>
-  <div>
-    <app-add-year
-      (yearCreated)="year = $event"
-    ></app-add-year>
-  </div>
-  <div>
-    <app-add-pinpoint></app-add-pinpoint>
-  </div>
-  <button 
+  <app-add-parties
+    (partyOneCreated)="partyOne = $event"
+    (partyTwoCreated)="partyTwo = $event">
+  </app-add-parties>
+  <app-add-ohio-volume
+    (ohioVolumeCreated)="ohioVolume = $event"
+    (ohioReporterCreated)="ohioReporter = $event"
+    (ohioFirstPageCreated)="ohioFirstPage = $event">
+  </app-add-ohio-volume>
+  <app-add-regional-volume
+    (regionalVolumeCreated)="regionalVolume = $event"
+    (regionalReporterCreated)="regionalReporter = $event"
+    (regionalFirstPageCreated)="regionalFirstPage = $event">
+  </app-add-regional-volume>
+  <app-add-webcite
+      (webciteCreated)="webcite = $event">
+  </app-add-webcite>
+  <app-add-year
+    (yearCreated)="year = $event">
+  </app-add-year>
+  <app-add-pinpoint></app-add-pinpoint>
+  <button
+    class="button" 
     (click)="createCitation(
       partyOne,
       partyTwo, 
