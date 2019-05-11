@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-remove-citation',
   templateUrl: './remove-citation.component.html',
-  styleUrls: ['./remove-citation.component.css']
+  styleUrls: ['./remove-citation.component.sass']
 })
 export class RemoveCitationComponent implements OnInit {
 

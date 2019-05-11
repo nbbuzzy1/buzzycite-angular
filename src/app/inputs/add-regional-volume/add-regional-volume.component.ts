@@ -3,7 +3,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-add-regional-volume',
   templateUrl: './add-regional-volume.component.html',
-  styleUrls: ['./add-regional-volume.component.css']
+  styleUrls: ['./add-regional-volume.component.sass']
 })
 export class AddRegionalVolumeComponent {
   regionalVolume: number;

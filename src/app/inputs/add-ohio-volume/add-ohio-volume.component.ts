@@ -3,7 +3,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-add-ohio-volume',
   templateUrl: './add-ohio-volume.component.html',
-  styleUrls: ['./add-ohio-volume.component.css']
+  styleUrls: ['./add-ohio-volume.component.sass']
 })
 export class AddOhioVolumeComponent {
   ohioVolume: number;

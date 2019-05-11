@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-supreme-post',
   templateUrl: './supreme-post.component.html',
-  styleUrls: ['./supreme-post.component.css']
+  styleUrls: ['./supreme-post.component.sass']
 })
 export class SupremePostComponent {
   citation: string;

@@ -34,8 +34,6 @@ import { CitationComponent } from './citation/citation/citation.component';
 import { CitationListFiltersComponent } from './citation/citation-list-filters/citation-list-filters.component';
 import { AppRoutingModule } from './app-routing.module';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +64,7 @@ import { AppRoutingModule } from './app-routing.module';
     AddRegionalAppVolumeComponent,
     AddWestlawLexisComponent,
     CitationComponent,
-    CitationListFiltersComponent
+    CitationListFiltersComponent,
   ],
   imports: [
     BrowserModule,

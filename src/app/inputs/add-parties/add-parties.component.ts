@@ -5,7 +5,7 @@ import { AbbreviateService } from './abbreviate.service';
 @Component({
   selector: 'app-add-parties',
   templateUrl: './add-parties.component.html',
-  styleUrls: ['./add-parties.component.css'],
+  styleUrls: ['./add-parties.component.sass'],
   providers: [AbbreviateService]
 })
 export class AddPartiesComponent {

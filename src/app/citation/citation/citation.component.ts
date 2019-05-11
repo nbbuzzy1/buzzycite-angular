@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-citation',
   templateUrl: './citation.component.html',
-  styleUrls: ['./citation.component.css']
+  styleUrls: ['./citation.component.sass']
 })
 export class CitationComponent {
   @Input() displayCitation: string;

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-add-regional-app-volume',
   templateUrl: './add-regional-app-volume.component.html',
-  styleUrls: ['./add-regional-app-volume.component.css']
+  styleUrls: ['./add-regional-app-volume.component.sass']
 })
 export class AddRegionalAppVolumeComponent implements OnInit {
 
