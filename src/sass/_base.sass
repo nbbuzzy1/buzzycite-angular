@@ -11,15 +11,18 @@ body
   background: $grey
   color: $gold
 
-button 
+button,
+a 
   cursor: pointer
 
 button:disabled 
   cursor: default
 
-link,
 a
   text-decoration: none
+
+h1:focus, a:focus, button:focus 
+  outline: 0
 
 .content-container 
   display: flex
