@@ -10,5 +10,21 @@
   <app-add-year></app-add-year>
   <app-add-district></app-add-district>
   <app-add-pinpoint></app-add-pinpoint>
-  <app-citation></app-citation>
+  <button
+    class="button" 
+    (click)="createCitation(
+      partyOne,
+      partyTwo, 
+      ohioVolume, 
+      ohioReporter,
+      ohioFirstPage,
+      regionalVolume,
+      regionalReporter,
+      regionalFirstPage,
+      webcite,
+      year
+      )"
+    >Cite Case
+  </button>
+  <p *ngIf="citation"><i>{{ italicizedCitation }}</i>{{ remainingCitation }}</p>
 </div>

@@ -9,6 +9,7 @@ import { AppealPostNonprintComponent } from './courts/appeal-post-nonprint/appea
 import { AppealPreNonprintComponent } from './courts/appeal-pre-nonprint/appeal-pre-nonprint.component';
 import { AppealPrePrintComponent } from './courts/appeal-pre-print/appeal-pre-print.component';
 import { AbbreviateTermComponent } from './pages/abbreviate-term/abbreviate-term.component';
+import { CustomCitationComponent } from './pages/custom-citation/custom-citation.component';
 
 const appRoutes: Routes =[
   { path: '', component: DashboardPageComponent },
@@ -19,6 +20,7 @@ const appRoutes: Routes =[
   { path: 'appeal-pre-print', component: AppealPrePrintComponent},
   { path: 'appeal-pre-nonprint', component: AppealPreNonprintComponent},
   { path: 'abbreviate-term', component: AbbreviateTermComponent},
+  { path: 'custom-citation', component: CustomCitationComponent},
 ]
 
 @NgModule({
