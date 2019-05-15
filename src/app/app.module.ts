@@ -31,8 +31,9 @@ import { AddOhioAppVolumeComponent } from './inputs/add-ohio-app-volume/add-ohio
 import { AddRegionalAppVolumeComponent } from './inputs/add-regional-app-volume/add-regional-app-volume.component';
 import { AddWestlawLexisComponent } from './inputs/add-westlaw-lexis/add-westlaw-lexis.component';
 import { CitationComponent } from './citation/citation/citation.component';
-import { CitationListFiltersComponent } from './citation/citation-list-filters/citation-list-filters.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CitationListItemComponent } from './pages/citation-list/citation-list-item/citation-list-item.component';
+import { CitationListFiltersComponent } from './pages/citation-list/citation-list-filters/citation-list-filters.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { AppRoutingModule } from './app-routing.module';
     AddRegionalAppVolumeComponent,
     AddWestlawLexisComponent,
     CitationComponent,
+    CitationListItemComponent,
     CitationListFiltersComponent,
   ],
   imports: [

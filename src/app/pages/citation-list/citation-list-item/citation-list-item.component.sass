@@ -1,0 +1,36 @@
+@import '../../../../sass/_variables.sass'
+
+.citation-container 
+  background: $dark-grey
+  border-bottom: $off-white solid 1px
+  display: flex
+  word-break: break-word
+
+.citation 
+  align-items: center
+  display: flex
+  padding: $s-size
+  width: 30rem
+
+.citation__date, .citation__type 
+  align-items: center
+  display: flex
+  padding: $s-size
+  width: 15rem
+  @media (max-width: 50rem) 
+    display: none
+
+.citation__note 
+  align-items: center
+  display: flex
+  padding: $s-size
+  width: 70rem
+
+.citation__button 
+  background: $dark-grey
+  border: none
+  color: $gold
+  display: flex
+  justify-content: center
+  padding: $s-size
+  text-decoration: none
