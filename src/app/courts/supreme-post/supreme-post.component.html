@@ -40,10 +40,11 @@
       )"
     >Cite Case
   </button>
-  <p *ngIf="citation"><i>{{ italicizedCitation }}</i>{{ remainingCitation }}</p>
+  <h3 *ngIf="citation"><i>{{ italicizedCitation }}</i>{{ remainingCitation }}</h3>
+  <div id="fullCitation" contenteditable="true"></div>
   <div class="button__layout">
     <button *ngIf="citation" class="button button--save">Save Citation</button>
-    <button *ngIf="citation" class="button button--copy">Copy Citation</button>
+    <button *ngIf="citation" class="button button--copy" (click)="onCopyCitation()">Copy Citation</button>
     <button *ngIf="citation" class="button button--remove">Remove Citation</button>
   </div>
 </div>

@@ -25,4 +25,14 @@ export class SupremePostComponent {
     this.citation = this.italicizedCitation + this.remainingCitation
       // `${partyOne} v. ${partyTwo}, ${ohioVolume} ${ohioReporter} ${ohioFirstPage}, ${year}-Ohio-${webcite}, ${regionalVolume} ${regionalReporter} ${regionalFirstPage}`;
   }
+  startCopyCitation(citationText) {
+    let copyArea = document.getElementById('fullCitation');
+    copyArea.innerHTML = citationText;
+    copyArea.focus();
+    document.execCommand("selectAll");
+    document.execCommand("copy");
+  };
+  onCopyCitation() {
+    this.startCopyCitation(`<i>${this.italicizedCitation}</i>${this.remainingCitation}`);
+  }
 }
