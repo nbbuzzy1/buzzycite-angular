@@ -34,6 +34,7 @@ import { CitationComponent } from './citation/citation/citation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CitationListItemComponent } from './pages/citation-list/citation-list-item/citation-list-item.component';
 import { CitationListFiltersComponent } from './pages/citation-list/citation-list-filters/citation-list-filters.component';
+import { Citations } from './citations.service';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,7 @@ import { CitationListFiltersComponent } from './pages/citation-list/citation-lis
     // HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [Citations],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Citation } from 'src/app/citation.model';
 
 @Component({
   selector: 'app-citation-list-item',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./citation-list-item.component.sass']
 })
 export class CitationListItemComponent implements OnInit {
-
+  @Input() citation: Citation
   constructor() { }
 
   ngOnInit() {
