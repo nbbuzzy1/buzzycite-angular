@@ -1,8 +1,22 @@
 <div>
   <div>
-    <input required type="text" id="county" placeholder="County" class="text-input" />
+    <input 
+      placeholder="County"
+      class="text-input"
+      type="text" 
+      value="{{ this.inputsService.county }}"
+      #county
+      (change)="setCounty()" 
+    />
   </div>
   <div>
-    <input required type="text" id="caseNo" placeholder="Case Number" class="text-input" />
+    <input 
+      placeholder="Case Number"
+      class="text-input"
+      type="text" 
+      value="{{ this.inputsService.caseNo }}"
+      #caseNo
+      (change)="setCaseNo()" 
+    />
   </div>
 </div>

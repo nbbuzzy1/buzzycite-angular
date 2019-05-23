@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Inputs } from '../../inputs.service'
 
 @Component({
   selector: 'app-add-county',
   templateUrl: './add-county.component.html',
   styleUrls: ['./add-county.component.sass']
 })
-export class AddCountyComponent implements OnInit {
+export class AddCountyComponent {
+  @ViewChild('county') county: ElementRef
+  @ViewChild('caseNo') caseNo: ElementRef
 
-  constructor() { }
+  constructor(private inputsService: Inputs) {}
 
-  ngOnInit() {
+  setCounty() {
+    this.inputsService.county = this.county.nativeElement.value
   }
-
+  setCaseNo() {
+    this.inputsService.caseNo = this.caseNo.nativeElement.value
+  }
 }

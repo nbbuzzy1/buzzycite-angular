@@ -19,6 +19,7 @@ export class Inputs {
   westlaw: string
   lexis: string
   county: string
+  caseNo: string
   district: string
   month: string
   day: number
@@ -51,6 +52,7 @@ export class Inputs {
     this.day = null;
     this.month = '';
     this.county = '';
+    this.caseNo = '';
     this.district = '';
     this.pinpoint = '';
     this.pinpointDisplay = '';
