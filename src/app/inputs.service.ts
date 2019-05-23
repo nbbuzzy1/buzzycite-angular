@@ -4,8 +4,8 @@ import { AbbreviateService } from './inputs/add-parties/abbreviate.service';
 @Injectable()
 export class Inputs {
 
-
   constructor(private abbreviateService: AbbreviateService) {}
+
   partyOne: string
   partyTwo: string
   ohioVolume: string
@@ -27,13 +27,13 @@ export class Inputs {
   abbreviatePartyOne(party) {
     const modifiedParty = this.abbreviateService.abbreviateParty(party)
     this.partyOne = modifiedParty
-    return this.partyOne
   }
+
   abbreviatePartyTwo(party) {
     const modifiedParty = this.abbreviateService.abbreviateParty(party)
     this.partyTwo = modifiedParty
-    return this.partyTwo
   }
+
   removeCitation() {
     this.partyOne = '';
     this.partyTwo = '';

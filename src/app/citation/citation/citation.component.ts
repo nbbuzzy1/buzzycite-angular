@@ -24,6 +24,7 @@ export class CitationComponent {
   onCopyCitation() {
     this.startCopyCitation(`<i>${this.italicizedCitation}</i>${this.remainingCitation}`);
   }
+  
   onRemoveCitation() {
     this.inputsService.removeCitation()
     this.citation = '';
