@@ -1,27 +1,24 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 import { AbbreviateService } from './abbreviate.service';
+import { Inputs } from 'src/app/inputs.service';
 
 @Component({
   selector: 'app-add-parties',
   templateUrl: './add-parties.component.html',
   styleUrls: ['./add-parties.component.sass'],
-  providers: [AbbreviateService]
+  // providers: [AbbreviateService]
 })
 export class AddPartiesComponent {
-  @Output() partyOneCreated = new EventEmitter<string>();
-  @Output() partyTwoCreated = new EventEmitter<string>();
-  partyOne: string = '';
-  partyTwo: string = '';
+  @ViewChild('partyOne') partyOne: ElementRef
+  @ViewChild('partyTwo') partyTwo: ElementRef
 
-  constructor(private abbreviateService: AbbreviateService) {}
+  constructor(private inputsService: Inputs) {}
 
-  sendPartyOne() {
-    const modifiedParty = this.abbreviateService.abbreviateParty(this.partyOne)
-    this.partyOneCreated.emit(modifiedParty)
+  setPartyOne() {
+    this.inputsService.abbreviatePartyOne(this.partyOne.nativeElement.value)
   }
-  sendPartyTwo() {
-    const modifiedParty = this.abbreviateService.abbreviateParty(this.partyTwo)
-    this.partyTwoCreated.emit(modifiedParty)
+  setPartyTwo() {
+    this.inputsService.abbreviatePartyTwo(this.partyTwo.nativeElement.value)
   }
 }

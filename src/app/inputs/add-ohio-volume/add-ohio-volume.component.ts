@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Inputs } from '../../inputs.service'
 
 @Component({
   selector: 'app-add-ohio-volume',
@@ -6,19 +7,19 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./add-ohio-volume.component.sass']
 })
 export class AddOhioVolumeComponent {
-  ohioVolume: number;
-  ohioReporter: string = '';
-  ohioFirstPage: number;
-  @Output() ohioVolumeCreated = new EventEmitter<number>();
-  @Output() ohioReporterCreated = new EventEmitter<string>();
-  @Output() ohioFirstPageCreated = new EventEmitter<number>();
-  sendOhioVolume() {
-    this.ohioVolumeCreated.emit(this.ohioVolume)
+  @ViewChild('ohioVolume') ohioVolume: ElementRef
+  @ViewChild('ohioReporter') ohioReporter: ElementRef
+  @ViewChild('ohioFirstPage') ohioFirstPage: ElementRef
+
+  constructor(private inputsService: Inputs) {}
+
+  setOhioVolume() {
+    this.inputsService.ohioVolume = this.ohioVolume.nativeElement.value
   }
-  sendOhioReporter() {
-    this.ohioReporterCreated.emit(this.ohioReporter)
+  setOhioReporter() {
+    this.inputsService.ohioReporter = this.ohioReporter.nativeElement.value
   }
-  sendOhioFirstPage() {
-    this.ohioFirstPageCreated.emit(this.ohioFirstPage)
+  setOhioFirstPage() {
+    this.inputsService.ohioFirstPage = this.ohioFirstPage.nativeElement.value
   }
 }

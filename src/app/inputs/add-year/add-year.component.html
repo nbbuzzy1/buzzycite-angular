@@ -2,8 +2,9 @@
   <input 
     placeholder="Year"
     type="number"
-    class="text-input"     
-    [(ngModel)]="year"
-    (change)="sendYear()"
+    class="text-input"
+    value="{{ this.inputsService.year }}"      
+    #year
+    (change)="setYear()"
   >
 </div>

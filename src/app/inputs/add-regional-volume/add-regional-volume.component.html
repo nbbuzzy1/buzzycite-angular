@@ -2,16 +2,18 @@
   <input 
     placeholder="Regional Volume"
     type="number"
-    class="text-input" 
-    [(ngModel)]="regionalVolume"
-    (change)="sendRegionalVolume()"
+    class="text-input"
+    value="{{ this.inputsService.regionalVolume }}"
+    #regionalVolume
+    (change)="setRegionalVolume()"
   >
 </div>
 <div>
   <select
     class="select" 
-    [(ngModel)]="regionalReporter"
-    (change)="sendRegionalReporter()">
+    value="{{ this.inputsService.regionalReporter }}"
+    #regionalReporter
+    (change)="setRegionalReporter()">
     <option value="">Regional Reporter</option>
     <option value="N.E.3d">N.E.3d</option>
     <option value="N.E.2d">N.E.2d</option>
@@ -23,6 +25,7 @@
     placeholder="Regional First Page"
     type="number"
     class="text-input" 
-    [(ngModel)]="regionalFirstPage"
-    (change)="sendRegionalFirstPage()">
+    value="{{ this.inputsService.regionalFirstPage }}"
+    #regionalFirstPage
+    (change)="setRegionalFirstPage()">
 </div>

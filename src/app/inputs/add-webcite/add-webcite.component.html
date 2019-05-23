@@ -2,8 +2,9 @@
   <input 
     placeholder="Webcite"
     type="number"
-    class="text-input"     
-    [(ngModel)]="webcite"
-    (change)="sendWebcite()"
+    class="text-input"
+    value="{{ this.inputsService.webcite }}"     
+    #webcite
+    (change)="setWebcite()"
   >
 </div>

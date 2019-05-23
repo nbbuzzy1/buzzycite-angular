@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Inputs } from '../../inputs.service';
 
 @Component({
   selector: 'app-add-year',
@@ -6,9 +7,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./add-year.component.sass']
 })
 export class AddYearComponent {
-  @Output() yearCreated = new EventEmitter<number>();
-  year: number;
-  sendYear() {
-    this.yearCreated.emit(this.year)
+  @ViewChild('year') year: ElementRef
+
+  constructor(private inputsService: Inputs) {}
+  
+  setYear() {
+    this.inputsService.year = this.year.nativeElement.value
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Inputs } from '../../inputs.service'
 
 @Component({
   selector: 'app-supreme-post',
@@ -9,30 +10,13 @@ export class SupremePostComponent {
   citation: string;
   italicizedCitation: string;
   remainingCitation: string;
-  createCitation(
-    partyOne,
-    partyTwo, 
-    ohioVolume, 
-    ohioReporter,
-    ohioFirstPage,
-    regionalVolume,
-    regionalReporter,
-    regionalFirstPage,
-    webcite,
-    year) {
-    this.italicizedCitation = `${partyOne} v. ${partyTwo}`;
-    this.remainingCitation = `, ${ohioVolume} ${ohioReporter} ${ohioFirstPage}, ${year}-Ohio-${webcite}, ${regionalVolume} ${regionalReporter} ${regionalFirstPage}`;
+
+  constructor(private inputsService: Inputs) {}
+
+  createCitation() {
+    this.italicizedCitation = `${this.inputsService.partyOne} v. ${this.inputsService.partyTwo}`;
+    this.remainingCitation = `, ${this.inputsService.ohioVolume} ${this.inputsService.ohioReporter} ${this.inputsService.ohioFirstPage}, ${this.inputsService.year}-Ohio-${this.inputsService.webcite}, ${this.inputsService.regionalVolume} ${this.inputsService.regionalReporter} ${this.inputsService.regionalFirstPage}`;
     this.citation = this.italicizedCitation + this.remainingCitation
       // `${partyOne} v. ${partyTwo}, ${ohioVolume} ${ohioReporter} ${ohioFirstPage}, ${year}-Ohio-${webcite}, ${regionalVolume} ${regionalReporter} ${regionalFirstPage}`;
-  }
-  startCopyCitation(citationText) {
-    let copyArea = document.getElementById('fullCitation');
-    copyArea.innerHTML = citationText;
-    copyArea.focus();
-    document.execCommand("selectAll");
-    document.execCommand("copy");
-  };
-  onCopyCitation() {
-    this.startCopyCitation(`<i>${this.italicizedCitation}</i>${this.remainingCitation}`);
   }
 }

@@ -3,26 +3,44 @@
     <h2>Ohio Supreme Court</h2>
     <h3>Before May 1, 2002</h3>
   </div>
-  <app-add-parties></app-add-parties>
-  <app-add-ohio-volume></app-add-ohio-volume>
-  <app-add-regional-volume></app-add-regional-volume>
-  <app-add-year></app-add-year>
-  <app-add-pinpoint></app-add-pinpoint>
-  <button
-    class="button" 
-    (click)="createCitation(
-      partyOne,
-      partyTwo, 
-      ohioVolume, 
-      ohioReporter,
-      ohioFirstPage,
-      regionalVolume,
-      regionalReporter,
-      regionalFirstPage,
-      webcite,
-      year
-      )"
-    >Cite Case
-  </button>
-  <p *ngIf="citation"><i>{{ italicizedCitation }}</i>{{ remainingCitation }}</p>
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <app-add-parties></app-add-parties>
+    <app-add-ohio-volume></app-add-ohio-volume>
+    <button
+      class="button"
+      type="submit">Cite Case
+    </button>
+    <p *ngIf="submitted">Your Citation: {{ user.partyOne }}</p>
+  </form>
 </div>
+
+<!-- <div class="content-container">
+  <div>
+    <h2>Ohio Supreme Court</h2>
+    <h3>Before May 1, 2002</h3>
+  </div>
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <app-add-parties></app-add-parties>
+    <app-add-ohio-volume></app-add-ohio-volume>
+    <app-add-regional-volume></app-add-regional-volume>
+    <app-add-year></app-add-year>
+    <app-add-pinpoint></app-add-pinpoint>
+    <button
+      class="button" 
+      (click)="createCitation(
+        partyOne,
+        partyTwo, 
+        ohioVolume, 
+        ohioReporter,
+        ohioFirstPage,
+        regionalVolume,
+        regionalReporter,
+        regionalFirstPage,
+        webcite,
+        year
+        )"
+      >Cite Case
+    </button>
+    <p *ngIf="citation"><i>{{ italicizedCitation }}</i>{{ remainingCitation }}</p>
+  </form>
+</div> -->

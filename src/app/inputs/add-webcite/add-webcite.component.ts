@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Inputs } from '../../inputs.service';
 
 @Component({
   selector: 'app-add-webcite',
@@ -6,9 +7,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./add-webcite.component.sass']
 })
 export class AddWebciteComponent {
-  @Output() webciteCreated = new EventEmitter<number>();
-  webcite: number;
-  sendWebcite() {
-    this.webciteCreated.emit(this.webcite)
+  @ViewChild('webcite') webcite: ElementRef
+
+  constructor(private inputsService: Inputs) {}
+  
+  setWebcite() {
+    this.inputsService.webcite = this.webcite.nativeElement.value
   }
 }

@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Inputs } from '../../inputs.service';
 
 @Component({
   selector: 'app-add-regional-volume',
@@ -6,19 +7,19 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./add-regional-volume.component.sass']
 })
 export class AddRegionalVolumeComponent {
-  regionalVolume: number;
-  regionalReporter: string = '';
-  regionalFirstPage: number;
-  @Output() regionalVolumeCreated = new EventEmitter<number>();
-  @Output() regionalReporterCreated = new EventEmitter<string>();
-  @Output() regionalFirstPageCreated = new EventEmitter<number>();
-  sendRegionalVolume() {
-    this.regionalVolumeCreated.emit(this.regionalVolume)
+  @ViewChild('regionalVolume') regionalVolume: ElementRef
+  @ViewChild('regionalReporter') regionalReporter: ElementRef
+  @ViewChild('regionalFirstPage') regionalFirstPage: ElementRef
+
+  constructor(private inputsService: Inputs) {}
+
+  setRegionalVolume() {
+    this.inputsService.regionalVolume = this.regionalVolume.nativeElement.value
   }
-  sendRegionalReporter() {
-    this.regionalReporterCreated.emit(this.regionalReporter)
+  setRegionalReporter() {
+    this.inputsService.regionalReporter = this.regionalReporter.nativeElement.value
   }
-  sendRegionalFirstPage() {
-    this.regionalFirstPageCreated.emit(this.regionalFirstPage)
+  setRegionalFirstPage() {
+    this.inputsService.regionalFirstPage = this.regionalFirstPage.nativeElement.value
   }
 }
