@@ -1,16 +1,31 @@
 <div>
-  <div>
-    <input required type="number" id="ohioAppVolume" placeholder="Ohio Volume" class="text-input" onChange={props.handleOhioVolume}/>
-  </div>
-  <div>
-    <select required id="ohioAppReporter" class="select">
-      <option value="">Ohio Reporter</option>
-      <option value="Ohio App.3d">Ohio App.3d</option>
-      <option value="Ohio App.2d">Ohio App.2d</option>
-      <option value="Ohio App.">Ohio App.</option>
-    </select>
-  </div>
-  <div>
-    <input required type="number" id="ohioAppFirstPage" placeholder="Ohio First Page" class="text-input" onChange={props.handleOhioFirstPage}/>
-  </div>
+  <input 
+    placeholder="Ohio Volume"
+    type="number"
+    class="text-input"
+    value="{{ this.inputsService.ohioVolume }}"
+    #ohioVolume
+    (change)="setOhioVolume()"
+  >
+</div>
+<div>
+  <select
+    class="select" 
+    value="{{ this.inputsService.ohioReporter }}"
+    #ohioReporter
+    (change)="setOhioReporter()">
+    <option value="">Ohio Reporter</option>
+    <option value="Ohio App.3d">Ohio App.3d</option>
+    <option value="Ohio App.2d">Ohio App.2d</option>
+    <option value="Ohio App.">Ohio App.</option>
+  </select>
+</div>
+<div>
+  <input 
+    placeholder="Ohio First Page"
+    type="number"
+    class="text-input"
+    value="{{ this.inputsService.ohioFirstPage }}"
+    #ohioFirstPage
+    (change)="setOhioFirstPage()">
 </div>

@@ -14,9 +14,5 @@ export class AddPinpointComponent {
   
   setPinpoint() {
     this.inputsService.pinpoint = this.pinpoint.nativeElement.value
-
-    // if (!this.inputsService.pinpoint) {
-    //   this.inputsService.pinpointDisplay = '';
-    // }
   }
 }
