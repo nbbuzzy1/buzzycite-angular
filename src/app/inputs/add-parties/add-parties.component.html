@@ -4,6 +4,7 @@
     autofocus
     type="text"  
     class="text-input" 
+    [ngClass]="{partyOne: !this.inputsService.partyOne}"
     value="{{ this.inputsService.partyOne }}" 
     #partyOne
     (change)="setPartyOne()"

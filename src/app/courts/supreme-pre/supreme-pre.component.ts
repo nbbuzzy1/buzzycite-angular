@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component } from '@angular/core';
+import { Inputs } from '../../inputs.service'
 
 @Component({
   selector: 'app-supreme-pre',
@@ -7,26 +7,23 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./supreme-pre.component.sass']
 })
 export class SupremePreComponent {
+  citation: string;
+  italicizedCitation: string;
+  remainingCitation: string;
 
-  @ViewChild('f') citationForm: NgForm
-  submitted = false;
-  // defaultSubscription = 'Basic'
-  user = {
-    partyOne: '',
-    partyTwo: '',
-    ohioVolume: '',
-    ohioReporter: '',
-    ohioFirstPage: ''
+  constructor(private inputsService: Inputs) {}
+
+  createCitation() {
+    this.pinpointDisplay()
+    this.italicizedCitation = `${this.inputsService.partyOne} v. ${this.inputsService.partyTwo}`;
+    this.remainingCitation = `, ${this.inputsService.ohioVolume} ${this.inputsService.ohioReporter} ${this.inputsService.ohioFirstPage}${this.inputsService.pinpointDisplay}, ${this.inputsService.regionalVolume} ${this.inputsService.regionalReporter} ${this.inputsService.regionalFirstPage} (${this.inputsService.year})`;
+    this.citation = this.italicizedCitation + this.remainingCitation
   }
-
-  onSubmit() {
-    this.submitted = true;
-    this.user.partyOne = this.citationForm.value.partyOne
-    this.user.partyTwo = this.citationForm.value.partyTwo
-    this.user.ohioVolume = this.citationForm.value.ohioVolume
-    this.user.ohioReporter = this.citationForm.value.ohioReporter
-    this.user.ohioFirstPage = this.citationForm.value.ohioFirstPage
-    // this.citationForm.reset();
-    console.log(this.citationForm)
+  pinpointDisplay() {
+    if (this.inputsService.pinpoint) {
+      this.inputsService.pinpointDisplay = `, ${this.inputsService.pinpoint}`
+    } else {
+      this.inputsService.pinpointDisplay = ''
+    }
   }
 }

@@ -15,6 +15,7 @@
     >Cite Case
   </button>
   <app-citation
+    *ngIf="validateInputs()"
     [italicizedCitation]="italicizedCitation"
     [remainingCitation]="remainingCitation"
     [citation]="citation">

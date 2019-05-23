@@ -22,7 +22,8 @@ export class Inputs {
   district: string
   month: string
   day: number
-  pinpoint: number
+  pinpoint: string
+  pinpointDisplay: string
 
   abbreviatePartyOne(party) {
     const modifiedParty = this.abbreviateService.abbreviateParty(party)
@@ -51,6 +52,7 @@ export class Inputs {
     this.month = '';
     this.county = '';
     this.district = '';
-    this.pinpoint = null;
+    this.pinpoint = '';
+    this.pinpointDisplay = '';
   }
 }
