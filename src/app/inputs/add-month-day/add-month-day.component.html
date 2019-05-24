@@ -24,8 +24,8 @@
       type="number" 
       class="text-input"
       value="{{ this.inputsService.day }}"
-      #day
-      (change)="setDay()"
+      [(ngModel)]="day"
+      (change)="this.inputsService.setDay(day)"  
     />
   </div>
 </div>

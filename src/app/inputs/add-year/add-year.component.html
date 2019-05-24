@@ -4,7 +4,7 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.year }}"      
-    #year
-    (change)="setYear()"
+    [(ngModel)]="year"
+    (change)="this.inputsService.setYear(year)"
   >
 </div>

@@ -6,8 +6,8 @@
     class="text-input" 
     [ngClass]="{partyOne: !this.inputsService.partyOne}"
     value="{{ this.inputsService.partyOne }}" 
-    #partyOne
-    (change)="setPartyOne()"
+    [(ngModel)]="partyOne"
+    (change)="this.inputsService.abbreviatePartyOne(partyOne)"
   >
 </div>
 <div>
@@ -16,7 +16,7 @@
     type="text"
     class="text-input"
     value="{{ this.inputsService.partyTwo }}" 
-    #partyTwo
-    (change)="setPartyTwo()"
+    [(ngModel)]="partyTwo"
+    (change)="this.inputsService.abbreviatePartyTwo(partyTwo)"
   > 
 </div>

@@ -8,16 +8,10 @@ import { Inputs } from '../../services/inputs.service';
 })
 export class AddMonthDayComponent {
   @ViewChild('month') month: ElementRef
-  @ViewChild('day') day: ElementRef
 
   constructor(private inputsService: Inputs) {}
 
   setMonth() {
     this.inputsService.month = this.month.nativeElement.value
   }
-
-  setDay() {
-    this.inputsService.day = this.day.nativeElement.value
-  }
-
 }

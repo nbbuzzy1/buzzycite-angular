@@ -37,6 +37,60 @@ export class Inputs {
     const modifiedParty = this.abbreviateService.abbreviateParty(party)
     this.partyTwo = modifiedParty
   }
+
+  setOhioVolume(ohioVolume) {
+    this.ohioVolume = ohioVolume
+  }
+
+  setOhioFirstPage(ohioFirstPage) {
+    this.ohioFirstPage = ohioFirstPage
+  }
+
+  setRegionalVolume(regionalVolume) {
+    this.regionalVolume = regionalVolume
+  }
+
+  setRegionalFirstPage(regionalFirstPage) {
+    this.regionalFirstPage = regionalFirstPage
+  }
+
+  setYear(year) {
+    this.year = year
+  }
+
+  setDay(day) {
+    this.day = day
+  }
+
+  setWebcite(webcite) {
+    this.webcite = webcite
+  }
+
+  setCounty(county) {
+    this.county = county
+  }
+
+  setCaseNo(caseNo) {
+    this.caseNo = caseNo
+  }
+
+  setWestlawDisplay(westlaw) {
+    this.westlaw = westlaw
+    if (this.westlaw) {
+      this.westlawDisplay = `WL ${this.westlaw}`
+    } else {
+      this.westlawDisplay = '';
+    }
+  }
+  setLexisDisplay(lexis) {
+    this.lexis = lexis
+    if (this.lexis) {
+      this.lexisDisplay = `LEXIS ${this.lexis}`;
+    } else {
+      this.lexisDisplay = '';
+    }
+  }
+
   removeCitation() {
     this.partyOne = '';
     this.partyTwo = '';

@@ -4,16 +4,17 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.ohioVolume }}"
-    #ohioVolume
-    (change)="setOhioVolume()"
+    [(ngModel)]="ohioVolume"
+    (change)="this.inputsService.setOhioVolume(ohioVolume)"
   >
 </div>
 <div>
   <select
     class="select" 
     value="{{ this.inputsService.ohioReporter }}"
+    name="ohioReporter" 
     #ohioReporter
-    (change)="setOhioReporter()">
+    (change)="this.setOhioReporter()">
     <option value="">Ohio Reporter</option>
     <option value="Ohio St.3d">Ohio St.3d</option>
     <option value="Ohio St.2d">Ohio St.2d</option>
@@ -26,8 +27,8 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.ohioFirstPage }}"
-    #ohioFirstPage
-    (change)="setOhioFirstPage()">
+    [(ngModel)]="ohioFirstPage"
+    (change)="this.inputsService.setOhioFirstPage(ohioFirstPage)">
 </div>
 
 

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { Inputs } from '../../services/inputs.service';
 
 @Component({
@@ -7,11 +7,6 @@ import { Inputs } from '../../services/inputs.service';
   styleUrls: ['./add-year.component.sass']
 })
 export class AddYearComponent {
-  @ViewChild('year') year: ElementRef
-
   constructor(private inputsService: Inputs) {}
   
-  setYear() {
-    this.inputsService.year = this.year.nativeElement.value
-  }
 }
