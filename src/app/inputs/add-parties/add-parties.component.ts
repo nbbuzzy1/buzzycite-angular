@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 import { AbbreviateService } from './abbreviate.service';
-import { Inputs } from 'src/app/inputs.service';
+import { Inputs } from 'src/app/services/inputs.service';
 
 @Component({
   selector: 'app-add-parties',

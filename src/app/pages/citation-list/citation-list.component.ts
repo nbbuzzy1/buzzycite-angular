@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Citation } from '../../citation.model';
-import { Citations } from 'src/app/citations.service';
+import { Citations } from '../../services/citations.service';
 
 @Component({
   selector: 'app-citation-list',

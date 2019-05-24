@@ -34,8 +34,8 @@ import { CitationComponent } from './citation/citation/citation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CitationListItemComponent } from './pages/citation-list/citation-list-item/citation-list-item.component';
 import { CitationListFiltersComponent } from './pages/citation-list/citation-list-filters/citation-list-filters.component';
-import { Citations } from './citations.service';
-import { Inputs } from './inputs.service';
+import { Citations } from './services/citations.service';
+import { Inputs } from './services/inputs.service';
 import { AbbreviateService } from './inputs/add-parties/abbreviate.service';
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Inputs } from '../../inputs.service'
+import { Inputs } from '../../services/inputs.service'
 
 @Component({
   selector: 'app-supreme-pre',

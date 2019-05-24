@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { Inputs } from '../../inputs.service';
+import { Inputs } from '../../services/inputs.service';
 
 @Component({
   selector: 'app-add-webcite',

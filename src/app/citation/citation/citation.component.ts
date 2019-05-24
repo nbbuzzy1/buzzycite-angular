@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Inputs } from 'src/app/inputs.service';
+import { Inputs } from 'src/app/services/inputs.service';
 
 @Component({
   selector: 'app-citation',

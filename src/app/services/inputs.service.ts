@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AbbreviateService } from './inputs/add-parties/abbreviate.service';
+import { AbbreviateService } from '../inputs/add-parties/abbreviate.service';
 
 @Injectable()
 export class Inputs {
