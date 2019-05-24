@@ -16,8 +16,10 @@ export class Inputs {
   regionalFirstPage: number
   year: number
   webcite: number
-  westlaw: string
-  lexis: string
+  westlaw: number
+  westlawDisplay: string
+  lexis: number
+  lexisDisplay: string
   county: string
   caseNo: string
   district: string
@@ -35,7 +37,6 @@ export class Inputs {
     const modifiedParty = this.abbreviateService.abbreviateParty(party)
     this.partyTwo = modifiedParty
   }
-
   removeCitation() {
     this.partyOne = '';
     this.partyTwo = '';
@@ -47,8 +48,10 @@ export class Inputs {
     this.regionalVolume = null;
     this.regionalReporter = '';
     this.regionalFirstPage = null;
-    this.westlaw = '';
-    this.lexis = '';
+    this.westlaw = null;
+    this.westlawDisplay = '';
+    this.lexis = null;
+    this.lexisDisplay = '';
     this.day = null;
     this.month = '';
     this.county = '';

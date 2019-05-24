@@ -1,8 +1,20 @@
 <div>
   <div>
-    <input type="number" id="westlaw" class="text-input" placeholder="Westlaw Number"/>
+    <input 
+      placeholder="Westlaw Number"
+      type="number" 
+      class="text-input"
+      value="{{ this.inputsService.westlaw }}"
+      #westlawNo
+      (change)="setWestlawDisplay()"/>
   </div>
   <div>
-    <input type="number" id="lexis" class="text-input" placeholder="Lexis Number"/>
+    <input 
+      placeholder="Lexis Number"
+      type="number" 
+      class="text-input"
+      value="{{ this.inputsService.lexis }}"
+      #lexisNo
+      (change)="setLexisDisplay()"/>
   </div>
 </div>

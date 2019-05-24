@@ -1,5 +1,9 @@
 <div>
-  <select required id="month" class="select">
+  <select 
+    class="select"
+    #month
+    value="{{ this.inputsService.month }}"
+    (change)="setMonth()">
     <option value="">Month</option>
     <option value="Jan.">January</option>
     <option value="Feb.">Febuary</option>
@@ -15,6 +19,13 @@
     <option value="Dec.">December</option>
   </select>
   <div>
-    <input type="number" id="day" placeholder="Day" class="text-input"/>
+    <input 
+      placeholder="Day"
+      type="number" 
+      class="text-input"
+      value="{{ this.inputsService.day }}"
+      #day
+      (change)="setDay()"
+    />
   </div>
 </div>

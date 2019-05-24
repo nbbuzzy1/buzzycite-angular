@@ -13,19 +13,12 @@
   <app-add-pinpoint></app-add-pinpoint>
   <button
     class="button" 
-    (click)="createCitation(
-      partyOne,
-      partyTwo, 
-      ohioVolume, 
-      ohioReporter,
-      ohioFirstPage,
-      regionalVolume,
-      regionalReporter,
-      regionalFirstPage,
-      webcite,
-      year
-      )"
+    (click)="createCitation()"
     >Cite Case
   </button>
-  <p *ngIf="citation"><i>{{ italicizedCitation }}</i>{{ remainingCitation }}</p>
+  <app-citation
+    [italicizedCitation]="italicizedCitation"
+    [remainingCitation]="remainingCitation"
+    [citation]="citation">
+  </app-citation>
 </div>
