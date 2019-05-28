@@ -13,5 +13,5 @@
     (click)="this.citationService.createSupremePreCitation()"
     >Cite Case
   </button>
-  <app-citation></app-citation>
+  <app-citation *ngIf="this.citationService.inputsFilled"></app-citation>
 </div>

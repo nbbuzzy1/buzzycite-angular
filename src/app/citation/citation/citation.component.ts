@@ -28,5 +28,6 @@ export class CitationComponent {
     this.inputsService.removeCitation()
     this.citationService.citation = '';
     this.citationService.remainingCitation = '';
+    this.citationService.inputsFilled = false;
   }
 }

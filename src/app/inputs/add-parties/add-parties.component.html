@@ -4,7 +4,8 @@
     autofocus
     type="text"  
     class="text-input" 
-    [ngClass]="{partyOne: !this.inputsService.partyOne}"
+    #partyOneValidate="ngModel"
+    [ngClass]="{required: !this.inputsService.partyOne && partyOneValidate.touched && partyOneValidate.pristine}"
     value="{{ this.inputsService.partyOne }}" 
     [(ngModel)]="partyOne"
     (change)="this.inputsService.abbreviatePartyOne(partyOne)"
@@ -16,6 +17,8 @@
     type="text"
     class="text-input"
     value="{{ this.inputsService.partyTwo }}" 
+    #partyTwoValidate="ngModel"
+    [ngClass]="{required: !this.inputsService.partyOne && partyTwoValidate.touched && partyTwoValidate.pristine}"
     [(ngModel)]="partyTwo"
     (change)="this.inputsService.abbreviatePartyTwo(partyTwo)"
   > 
