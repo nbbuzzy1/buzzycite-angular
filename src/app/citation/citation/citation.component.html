@@ -1,7 +1,7 @@
-<h3 *ngIf="citation"><i>{{ italicizedCitation }}</i>{{ remainingCitation }}</h3>
+<h3><i>{{ this.citationService.italicizedCitation }}</i>{{ this.citationService.remainingCitation }}</h3>
 <div id="fullCitation" contenteditable="true"></div>
 <div class="button__layout">
-  <button *ngIf="citation" class="button button--save">Save Citation</button>
-  <button *ngIf="citation" class="button button--copy" (click)="onCopyCitation()">Copy Citation</button>
-  <button *ngIf="citation" class="button button--remove" (click)="onRemoveCitation()">Remove Citation</button>
+  <button class="button button--save">Save Citation</button>
+  <button class="button button--copy" (click)="onCopyCitation()">Copy Citation</button>
+  <button class="button button--remove" (click)="onRemoveCitation()">Remove Citation</button>
 </div>

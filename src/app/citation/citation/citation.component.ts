@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Inputs } from 'src/app/services/inputs.service';
+import { CitationService } from 'src/app/services/citation.service';
 
 @Component({
   selector: 'app-citation',
@@ -7,11 +8,9 @@ import { Inputs } from 'src/app/services/inputs.service';
   styleUrls: ['./citation.component.sass']
 })
 export class CitationComponent {
-  @Input() citation: string;
-  @Input() italicizedCitation: string;
-  @Input() remainingCitation: string;
 
-  constructor(private inputsService: Inputs) {}
+  constructor(private inputsService: Inputs,
+              private citationService: CitationService) {}
 
   startCopyCitation(citationText) {
     let copyArea = document.getElementById('fullCitation');
@@ -22,11 +21,11 @@ export class CitationComponent {
   };
 
   onCopyCitation() {
-    this.startCopyCitation(`<i>${this.italicizedCitation}</i>${this.remainingCitation}`);
+    this.startCopyCitation(`<i>${this.citationService.italicizedCitation}</i>${this.citationService.remainingCitation}`);
   }
   
   onRemoveCitation() {
     this.inputsService.removeCitation()
-    this.citation = '';
+    this.citationService.citation = '';
   }
 }
