@@ -12,10 +12,8 @@
   <app-add-pinpoint></app-add-pinpoint>
   <button
     class="button" 
-    (click)="createCitation()"
+    (click)="this.citationService.createAppealPrePrintCitation()"
     >Cite Case
   </button>
-  <app-citation
->
-  </app-citation>
+  <app-citation></app-citation>
 </div>

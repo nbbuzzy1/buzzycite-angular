@@ -21,11 +21,12 @@ export class CitationComponent {
   };
 
   onCopyCitation() {
-    this.startCopyCitation(`<i>${this.citationService.italicizedCitation}</i>${this.citationService.remainingCitation}`);
+    this.startCopyCitation(`<i>${this.inputsService.partiesDisplay}</i>${this.citationService.remainingCitation}`);
   }
   
   onRemoveCitation() {
     this.inputsService.removeCitation()
     this.citationService.citation = '';
+    this.citationService.remainingCitation = '';
   }
 }

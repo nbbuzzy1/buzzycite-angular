@@ -8,6 +8,7 @@ export class Inputs {
 
   partyOne: string
   partyTwo: string
+  partiesDisplay: string
   ohioVolume: string
   ohioReporter: string
   ohioFirstPage: number
@@ -36,6 +37,9 @@ export class Inputs {
   abbreviatePartyTwo(party) {
     const modifiedParty = this.abbreviateService.abbreviateParty(party)
     this.partyTwo = modifiedParty
+    if (this.partyOne && this.partyTwo) {
+      this.partiesDisplay = `${this.partyOne} v. ${this.partyTwo}`
+    }
   }
 
   setWestlawDisplay(westlaw) {
@@ -53,6 +57,30 @@ export class Inputs {
       this.lexisDisplay = `LEXIS ${this.lexis}`;
     } else {
       this.lexisDisplay = '';
+    }
+  }
+
+  setPostPinpointDisplay() {
+    if (this.pinpoint) {
+      this.pinpointDisplay = `, ¶ ${this.pinpoint}`
+    } else {
+      this.pinpointDisplay = ''
+    }
+  }
+
+  setPrePinpointDisplay() {
+    if (this.pinpoint) {
+      this.pinpointDisplay = `, ${this.pinpoint}`
+    } else {
+      this.pinpointDisplay = ''
+    }
+  }
+
+  setWestlawLexisPinpointDisplay() {
+    if (this.pinpoint) {
+      this.pinpointDisplay = `, *${this.pinpoint}`
+    } else {
+      this.pinpointDisplay = ''
     }
   }
 
@@ -78,5 +106,6 @@ export class Inputs {
     this.district = '';
     this.pinpoint = '';
     this.pinpointDisplay = '';
+    this.partiesDisplay = '';
   }
 }
