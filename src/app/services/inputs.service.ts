@@ -17,9 +17,9 @@ export class Inputs {
   year: number
   webcite: number
   westlaw: number
-  westlawDisplay: string
+  westlawDisplay: string = ''
   lexis: number
-  lexisDisplay: string
+  lexisDisplay: string = ''
   county: string
   caseNo: string
   district: string
@@ -38,42 +38,6 @@ export class Inputs {
     this.partyTwo = modifiedParty
   }
 
-  setOhioVolume(ohioVolume) {
-    this.ohioVolume = ohioVolume
-  }
-
-  setOhioFirstPage(ohioFirstPage) {
-    this.ohioFirstPage = ohioFirstPage
-  }
-
-  setRegionalVolume(regionalVolume) {
-    this.regionalVolume = regionalVolume
-  }
-
-  setRegionalFirstPage(regionalFirstPage) {
-    this.regionalFirstPage = regionalFirstPage
-  }
-
-  setYear(year) {
-    this.year = year
-  }
-
-  setDay(day) {
-    this.day = day
-  }
-
-  setWebcite(webcite) {
-    this.webcite = webcite
-  }
-
-  setCounty(county) {
-    this.county = county
-  }
-
-  setCaseNo(caseNo) {
-    this.caseNo = caseNo
-  }
-
   setWestlawDisplay(westlaw) {
     this.westlaw = westlaw
     if (this.westlaw) {
@@ -82,6 +46,7 @@ export class Inputs {
       this.westlawDisplay = '';
     }
   }
+
   setLexisDisplay(lexis) {
     this.lexis = lexis
     if (this.lexis) {

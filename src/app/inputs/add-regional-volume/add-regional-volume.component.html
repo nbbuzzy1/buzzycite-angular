@@ -4,8 +4,7 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.regionalVolume }}"
-    [(ngModel)]="regionalVolume"
-    (change)="this.inputsService.setRegionalVolume(regionalVolume)"
+    [(ngModel)]="this.inputsService.regionalVolume"
   >
 </div>
 <div>
@@ -26,6 +25,6 @@
     type="number"
     class="text-input" 
     value="{{ this.inputsService.regionalFirstPage }}"
-    [(ngModel)]="regionalFirstPage"
-    (change)="this.inputsService.setRegionalFirstPage(regionalFirstPage)">
+    [(ngModel)]="this.inputsService.regionalFirstPage"
+  >
 </div>

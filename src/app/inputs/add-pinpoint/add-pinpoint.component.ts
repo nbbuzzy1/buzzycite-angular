@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { Inputs } from '../../services/inputs.service';
 
 @Component({
@@ -8,11 +8,6 @@ import { Inputs } from '../../services/inputs.service';
 })
 export class AddPinpointComponent {
 
-  @ViewChild('pinpoint') pinpoint: ElementRef
-
   constructor(private inputsService: Inputs) {}
   
-  setPinpoint() {
-    this.inputsService.pinpoint = this.pinpoint.nativeElement.value
-  }
 }

@@ -4,7 +4,6 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.webcite }}"     
-    [(ngModel)]="webcite"
-    (change)="this.inputsService.setWebcite(webcite)"
+    [(ngModel)]="this.inputsService.webcite"
   >
 </div>

@@ -5,8 +5,7 @@
       class="text-input"
       type="text" 
       value="{{ this.inputsService.county }}"
-      [(ngModel)]="county"
-      (change)="this.inputsService.setCounty(county)" 
+      [(ngModel)]="this.inputsService.county"
     />
   </div>
   <div>
@@ -15,8 +14,7 @@
       class="text-input"
       type="text" 
       value="{{ this.inputsService.caseNo }}"
-      [(ngModel)]="caseNo"
-      (change)="this.inputsService.setCaseNo(caseNo)"  
+      [(ngModel)]="this.inputsService.caseNo"
     />
   </div>
 </div>

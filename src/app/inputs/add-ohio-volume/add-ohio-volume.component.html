@@ -4,8 +4,7 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.ohioVolume }}"
-    [(ngModel)]="ohioVolume"
-    (change)="this.inputsService.setOhioVolume(ohioVolume)"
+    [(ngModel)]="this.inputsService.ohioVolume"
   >
 </div>
 <div>
@@ -27,8 +26,8 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.ohioFirstPage }}"
-    [(ngModel)]="ohioFirstPage"
-    (change)="this.inputsService.setOhioFirstPage(ohioFirstPage)">
+    [(ngModel)]="this.inputsService.ohioFirstPage"
+  >
 </div>
 
 

@@ -4,7 +4,6 @@
     type="text"
     class="text-input"
     value="{{ this.inputsService.pinpoint }}"
-    #pinpoint
-    (change)="setPinpoint()"
+    [(ngModel)]="this.inputsService.pinpoint"
   >
-  </div>
+</div>
