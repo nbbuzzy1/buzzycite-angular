@@ -1,24 +1,30 @@
 <div class="content-container">
-  <div>
-    <h2>Custom Citation</h2>
-  </div>
-  <input 
-    autoFocus 
-    class="text-input" 
-    type="text" 
-    placeholder="Enter Custom Citation" 
-  />
-  <input  
-    class="text-input" 
-    type="text" 
-    id="type" 
-    placeholder="Add Type (Optional)"
-  />
-  <textarea 
-    class="text-input" 
-    placeholder="Add Note (Optional)"></textarea>
-  <button 
-    class="button"
-  >Save
-  </button> 
+  <form [formGroup]="customCitation" (ngSubmit)="onSubmit()">
+    <div>
+      <h2>Custom Citation</h2>
+    </div>
+    <input 
+      autoFocus 
+      placeholder="Enter Custom Citation" 
+      class="text-input" 
+      type="text"
+      formControlName="citation" 
+      [ngClass]="{required: !customCitation.get('citation').valid && customCitation.get('citation').touched}"
+    />
+    <input  
+      placeholder="Add Type (Optional)"
+      class="text-input" 
+      type="text" 
+      formControlName="type" 
+    />
+    <textarea
+      placeholder="Add Note (Optional)" 
+      class="text-input"
+      formControlName="note">
+    </textarea>
+    <button 
+      class="button"
+      >Save
+    </button> 
+  </form>
 </div>
