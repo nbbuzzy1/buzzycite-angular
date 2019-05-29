@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { Citations } from '../../services/citations.service'
+import { Citation } from '../../citation.model';
 
 @Component({
   selector: 'app-custom-citation',
@@ -8,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class CustomCitationComponent implements OnInit {
   customCitation: FormGroup
-  constructor() { }
+  constructor( private citationsService: Citations) { }
 
   ngOnInit() {
     this.customCitation = new FormGroup({
@@ -18,8 +20,7 @@ export class CustomCitationComponent implements OnInit {
     })
   }
   onSubmit() {
-    console.log(this.customCitation.value.citation)
-    console.log(this.customCitation.value.type)
-    console.log(this.customCitation.value.note)
+    this.citationsService.citations.push(new Citation(this.customCitation.value.citation, 0, 'Jan 1, 2018', this.customCitation.value.type, this.customCitation.value.note))
+    this.citationsService.getCitations()
   }
 }

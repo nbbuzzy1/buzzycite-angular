@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { CitationService } from 'src/app/services/citation.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 
 @Component({
   selector: 'app-save-modal',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaveModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private citationService: CitationService,
+    public dialogRef: MatDialogRef<SaveModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }
-
+  save() {
+    this.dialogRef.close("It was saved");
+  }
 }

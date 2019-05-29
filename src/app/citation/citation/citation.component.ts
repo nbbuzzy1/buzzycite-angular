@@ -36,12 +36,13 @@ export class CitationComponent {
 
   onSaveCitation() {
       const dialogRef = this.dialog.open(SaveModalComponent, {
-        width: '250px',
+        // width: '250px',
         // data: {name: this.name, animal: this.animal}
       });
   
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
+        console.log(result)
         // this.animal = result;
       });
     
