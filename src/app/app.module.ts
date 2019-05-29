@@ -1,9 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
-// import {MatDialogModule} from "@angular/material";
 // import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -40,7 +37,6 @@ import { Citations } from './services/citations.service';
 import { Inputs } from './services/inputs.service';
 import { AbbreviateService } from './inputs/add-parties/abbreviate.service';
 import { CitationService } from './services/citation.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,12 +73,10 @@ import { CitationService } from './services/citation.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
-    // BrowserAnimationsModule,
-    MaterialModule,
+    // HttpModule,
+    AppRoutingModule
   ],
   providers: [Citations, Inputs, AbbreviateService, CitationService],
-  bootstrap: [AppComponent],
-  entryComponents: [AppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

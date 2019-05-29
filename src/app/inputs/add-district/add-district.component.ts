@@ -7,7 +7,7 @@ import { Inputs } from '../../services/inputs.service';
   styleUrls: ['./add-district.component.sass']
 })
 export class AddDistrictComponent {
-  @ViewChild('district') district: ElementRef
+  @ViewChild('district', { static: false }) district: ElementRef
 
   constructor(private inputsService: Inputs) {}
 

@@ -7,7 +7,7 @@ import { Inputs } from '../../services/inputs.service';
   styleUrls: ['./add-regional-volume.component.sass']
 })
 export class AddRegionalVolumeComponent {
-  @ViewChild('regionalReporter') regionalReporter: ElementRef
+  @ViewChild('regionalReporter', { static: false }) regionalReporter: ElementRef
 
   constructor(private inputsService: Inputs) {}
 

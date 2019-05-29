@@ -7,7 +7,7 @@ import { Inputs } from '../../services/inputs.service';
   styleUrls: ['./add-month-day.component.sass']
 })
 export class AddMonthDayComponent {
-  @ViewChild('month') month: ElementRef
+  @ViewChild('month', { static: false }) month: ElementRef
 
   constructor(private inputsService: Inputs) {}
 

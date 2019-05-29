@@ -7,7 +7,7 @@ import { Inputs } from '../../services/inputs.service'
   styleUrls: ['./add-ohio-app-volume.component.sass']
 })
 export class AddOhioAppVolumeComponent {
-  @ViewChild('ohioReporter') ohioReporter: ElementRef
+  @ViewChild('ohioReporter', { static: false }) ohioReporter: ElementRef
 
   constructor(private inputsService: Inputs) {}
 
