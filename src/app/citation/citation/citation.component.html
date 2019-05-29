@@ -1,7 +1,7 @@
 <h3><i>{{ this.inputsService.partiesDisplay }}</i>{{ this.citationService.remainingCitation }}</h3>
 <div id="fullCitation" contenteditable="true"></div>
 <div class="button__layout">
-  <button class="button button--save">Save Citation</button>
+  <button class="button button--save" (click)="onSaveCitation()">Save Citation</button>
   <button class="button button--copy" (click)="onCopyCitation()">Copy Citation</button>
   <button class="button button--remove" (click)="onRemoveCitation()">Remove Citation</button>
 </div>
