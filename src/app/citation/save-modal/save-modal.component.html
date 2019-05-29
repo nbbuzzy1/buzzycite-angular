@@ -1,5 +1,16 @@
-<h3 nat-dialog-title>Save?</h3>
-<p>
-  {{ this.citationService.citation}}
-</p>
-<button nat-button (click)="save()">Save</button>
+<div class="modal">
+  <h3 nat-dialog-title>{{ this.citationService.citation}}</h3>
+  <h3>January 1, 2019</h3>
+  <input  
+    placeholder="Add Type (Optional)"
+    class="text-input" 
+    type="text" 
+  />
+  <textarea
+  placeholder="Add Note (Optional)" 
+  class="text-input"
+  >
+</textarea>
+  <button class="button" nat-button (click)="save()">Save</button>
+</div>
+

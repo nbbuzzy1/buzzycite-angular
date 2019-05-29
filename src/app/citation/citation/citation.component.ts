@@ -36,7 +36,7 @@ export class CitationComponent {
 
   onSaveCitation() {
       const dialogRef = this.dialog.open(SaveModalComponent, {
-        // width: '250px',
+        panelClass: 'modal'
         // data: {name: this.name, animal: this.animal}
       });
   
