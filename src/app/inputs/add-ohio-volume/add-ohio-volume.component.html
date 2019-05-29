@@ -4,6 +4,8 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.ohioVolume }}"
+    #ohioVolumeValidate="ngModel"
+    [ngClass]="{required: !this.inputsService.ohioVolume && ohioVolumeValidate.touched && this.inputsService.noReset}"
     [(ngModel)]="this.inputsService.ohioVolume"
   >
 </div>
@@ -26,6 +28,8 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.ohioFirstPage }}"
+    #ohioFirstPageValidate="ngModel"
+    [ngClass]="{required: !this.inputsService.ohioFirstPage && ohioFirstPageValidate.touched && this.inputsService.noReset}"
     [(ngModel)]="this.inputsService.ohioFirstPage"
   >
 </div>

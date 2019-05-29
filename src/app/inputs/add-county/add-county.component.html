@@ -5,6 +5,8 @@
       class="text-input"
       type="text" 
       value="{{ this.inputsService.county }}"
+      #countyValidate="ngModel"
+      [ngClass]="{required: !this.inputsService.county && countyValidate.touched && this.inputsService.noReset}"
       [(ngModel)]="this.inputsService.county"
     />
   </div>
@@ -14,6 +16,8 @@
       class="text-input"
       type="text" 
       value="{{ this.inputsService.caseNo }}"
+      #caseNoValidate="ngModel"
+      [ngClass]="{required: !this.inputsService.caseNo && caseNoValidate.touched && this.inputsService.noReset}"
       [(ngModel)]="this.inputsService.caseNo"
     />
   </div>

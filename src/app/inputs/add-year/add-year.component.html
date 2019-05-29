@@ -3,10 +3,9 @@
     placeholder="Year"
     type="number"
     class="text-input"
-    value="{{ this.inputsService.year }}"      
+    value="{{ this.inputsService.year }}" 
+    #yearValidate="ngModel"
+    [ngClass]="{required: !this.inputsService.year && yearValidate.touched && this.inputsService.noReset}"
     [(ngModel)]="this.inputsService.year"
   >
 </div>
-
-
-<!-- (change)="this.inputsService.setYear($event)" -->

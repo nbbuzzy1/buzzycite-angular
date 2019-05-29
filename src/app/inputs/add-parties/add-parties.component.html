@@ -5,8 +5,8 @@
     type="text"  
     class="text-input" 
     #partyOneValidate="ngModel"
-    [ngClass]="{required: !this.inputsService.partyOne && partyOneValidate.touched && partyOneValidate.pristine}"
     value="{{ this.inputsService.partyOne }}" 
+    [ngClass]="{required: !this.inputsService.partyOne && partyOneValidate.touched && this.inputsService.noReset}"
     [(ngModel)]="partyOne"
     (change)="this.inputsService.abbreviatePartyOne(partyOne)"
   >
@@ -18,7 +18,7 @@
     class="text-input"
     value="{{ this.inputsService.partyTwo }}" 
     #partyTwoValidate="ngModel"
-    [ngClass]="{required: !this.inputsService.partyOne && partyTwoValidate.touched && partyTwoValidate.pristine}"
+    [ngClass]="{required: !this.inputsService.partyTwo && partyTwoValidate.touched && this.inputsService.noReset}"
     [(ngModel)]="partyTwo"
     (change)="this.inputsService.abbreviatePartyTwo(partyTwo)"
   > 

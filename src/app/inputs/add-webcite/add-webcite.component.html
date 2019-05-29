@@ -3,7 +3,9 @@
     placeholder="Webcite"
     type="number"
     class="text-input"
-    value="{{ this.inputsService.webcite }}"     
+    value="{{ this.inputsService.webcite }}"  
+    #webciteValidate="ngModel"
+    [ngClass]="{required: !this.inputsService.webcite && webciteValidate.touched && this.inputsService.noReset}"   
     [(ngModel)]="this.inputsService.webcite"
   >
 </div>

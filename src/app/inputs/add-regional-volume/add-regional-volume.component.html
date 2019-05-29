@@ -4,6 +4,8 @@
     type="number"
     class="text-input"
     value="{{ this.inputsService.regionalVolume }}"
+    #regionalVolumeValidate="ngModel"
+    [ngClass]="{required: !this.inputsService.regionalVolume && regionalVolumeValidate.touched && this.inputsService.noReset}"
     [(ngModel)]="this.inputsService.regionalVolume"
   >
 </div>
@@ -25,6 +27,8 @@
     type="number"
     class="text-input" 
     value="{{ this.inputsService.regionalFirstPage }}"
+    #regionalFirstPageValidate="ngModel"
+    [ngClass]="{required: !this.inputsService.regionalFirstPage && regionalFirstPageValidate.touched && this.inputsService.noReset}"
     [(ngModel)]="this.inputsService.regionalFirstPage"
   >
 </div>

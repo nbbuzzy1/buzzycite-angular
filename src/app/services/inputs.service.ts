@@ -28,6 +28,7 @@ export class Inputs {
   day: number
   pinpoint: string
   pinpointDisplay: string
+  noReset: boolean = true;
 
   abbreviatePartyOne(party) {
     const modifiedParty = this.abbreviateService.abbreviateParty(party)
@@ -107,5 +108,6 @@ export class Inputs {
     this.pinpoint = '';
     this.pinpointDisplay = '';
     this.partiesDisplay = '';
+    this.noReset = false;
   }
 }
