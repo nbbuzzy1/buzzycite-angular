@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+// import {MatDialogModule} from "@angular/material";
 // import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -74,10 +77,12 @@ import { CitationService } from './services/citation.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    // HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [Citations, Inputs, AbbreviateService, CitationService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AppComponent]
 })
 export class AppModule { }
