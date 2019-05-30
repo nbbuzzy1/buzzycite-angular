@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { Router } from '@angular/router';
 import { Citations } from '../../services/citations.service'
 import { Citation } from '../../citation.model';
 
@@ -10,7 +11,8 @@ import { Citation } from '../../citation.model';
 })
 export class CustomCitationComponent implements OnInit {
   customCitation: FormGroup
-  constructor( private citationsService: Citations) { }
+  constructor( private citationsService: Citations,
+                private router: Router) { }
 
   ngOnInit() {
     this.customCitation = new FormGroup({
@@ -22,5 +24,6 @@ export class CustomCitationComponent implements OnInit {
   onSubmit() {
     this.citationsService.citations.push(new Citation(this.customCitation.value.citation, 0, 'Jan 1, 2018', this.customCitation.value.type, this.customCitation.value.note))
     this.citationsService.getCitations()
+    this.router.navigate(['/citation-list'])
   }
 }
