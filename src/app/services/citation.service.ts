@@ -62,6 +62,12 @@ export class CitationService {
     this.citation = this.inputsService.partiesDisplay + this.remainingCitation;
   }
 
+  removeCitation() {
+    this.citation = '';
+    this.remainingCitation = '';
+    this.inputsFilled = false;
+  }
+
   validateSupremePostCitation() {
     if (this.inputsService.partyOne && this.inputsService.partyTwo && this.inputsService.ohioVolume
       && this.inputsService.ohioReporter && this.inputsService.ohioFirstPage && this.inputsService.year

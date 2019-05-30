@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Inputs } from '../../services/inputs.service';
 import { CitationService } from '../../services/citation.service';
 
@@ -7,9 +7,13 @@ import { CitationService } from '../../services/citation.service';
   templateUrl: './appeal-pre-nonprint.component.html',
   styleUrls: ['./appeal-pre-nonprint.component.sass']
 })
-export class AppealPreNonprintComponent {
+export class AppealPreNonprintComponent implements OnDestroy {
   
   constructor(private inputsService: Inputs,
     private citationService: CitationService) {}
 
+  ngOnDestroy() {
+    this.inputsService.removeCitation();
+    this.citationService.removeCitation();
+  }
 }
