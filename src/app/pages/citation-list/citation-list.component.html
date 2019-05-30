@@ -11,8 +11,9 @@
     </div>
     <div>
       <app-citation-list-item
-        *ngFor="let citationEl of citations"
-        [citation]="citationEl"></app-citation-list-item>
+        *ngFor="let citationEl of citations; let i = index"
+        [citation]="citationEl"
+        [index]="i"></app-citation-list-item>
     </div>
   </div>
   <div>

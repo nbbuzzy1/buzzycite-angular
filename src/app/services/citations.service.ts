@@ -8,4 +8,5 @@ export class Citations {
   getCitations() {
     return this.citations.slice();
   }
+
 }

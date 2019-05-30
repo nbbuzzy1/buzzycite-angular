@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Citation } from 'src/app/citation.model';
+import { Citations } from 'src/app/services/citations.service';
 
 @Component({
   selector: 'app-citation-list-item',
@@ -8,9 +9,14 @@ import { Citation } from 'src/app/citation.model';
 })
 export class CitationListItemComponent implements OnInit {
   @Input() citation: Citation
-  constructor() { }
+  @Input() index: number
+  constructor(private citationsService: Citations) { }
 
   ngOnInit() {
   }
-
+  deleteCitation() {
+    this.citationsService.citations.splice(this.index, 1);
+    this.citationsService.citations.slice();
+    console.log(this.citationsService.citations)
+  }
 }
