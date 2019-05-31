@@ -16,7 +16,7 @@ export class CitationListItemComponent implements OnInit {
   }
   deleteCitation() {
     this.citationsService.citations.splice(this.index, 1);
-    this.citationsService.citations.slice();
+    this.citationsService.citationsChanged.next(this.citationsService.citations.slice())
     console.log(this.citationsService.citations)
   }
 }

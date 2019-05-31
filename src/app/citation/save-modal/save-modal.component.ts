@@ -23,7 +23,7 @@ export class SaveModalComponent implements OnInit {
   }
 
   save() {
-    this.citationsService.citations.push(new Citation(this.citationService.citation, 0, 'Jan 2, 2018', this.type, this.note))
+    this.citationsService.addCitation(new Citation(this.citationService.citation, 0, 'Jan 2, 2018', this.type, this.note))
     this.citationsService.getCitations()
     this.dialogRef.close("It was saved");
     this.router.navigate(['/citation-list'])

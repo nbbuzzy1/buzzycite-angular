@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { Citation } from '../../citation.model';
 import { Citations } from '../../services/citations.service';
@@ -10,9 +11,16 @@ import { Citations } from '../../services/citations.service';
 })
 export class CitationListComponent implements OnInit {
   citations: Citation[];
+  subscription: Subscription
   constructor(private citationsService: Citations) { }
 
   ngOnInit() {
+    this.subscription = this.citationsService.citationsChanged
+    .subscribe(
+      (citations: Citation[]) => {
+        this.citations = citations
+      }
+    )
     this.citations = this.citationsService.getCitations();
   }
 

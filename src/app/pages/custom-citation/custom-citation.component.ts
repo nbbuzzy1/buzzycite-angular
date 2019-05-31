@@ -22,7 +22,7 @@ export class CustomCitationComponent implements OnInit {
     })
   }
   onSubmit() {
-    this.citationsService.citations.push(new Citation(this.customCitation.value.citation, 0, 'Jan 1, 2018', this.customCitation.value.type, this.customCitation.value.note))
+    this.citationsService.addCitation(new Citation(this.customCitation.value.citation, 0, 'Jan 1, 2018', this.customCitation.value.type, this.customCitation.value.note))
     this.citationsService.getCitations()
     this.router.navigate(['/citation-list'])
   }
