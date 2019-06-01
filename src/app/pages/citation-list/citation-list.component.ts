@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { Citation } from '../../citation.model';
@@ -13,6 +13,9 @@ export class CitationListComponent implements OnInit {
   citations: Citation[];
   subscription: Subscription
   filterString = ''
+  @ViewChild('sort', { static: false }) sort: ElementRef
+  modifiedSort = 'date'
+
   constructor(private citationsService: Citations) { }
 
   ngOnInit() {
@@ -23,6 +26,10 @@ export class CitationListComponent implements OnInit {
       }
     )
     this.citations = this.citationsService.getCitations();
+  }
+
+  setSortFilter() {
+    this.modifiedSort = this.sort.nativeElement.value
   }
 
 }

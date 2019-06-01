@@ -8,9 +8,9 @@
         placeholder="Search citation"
         [(ngModel)]="filterString"
       />
-      <select class="select-filter">
-        <option>Date</option>
-        <option>Type</option>
+      <select class="select-filter" #sort (change)="setSortFilter()">
+        <option value="date">Date</option>
+        <option value="type">Type</option>
       </select>
     </div>
   </div>
@@ -24,7 +24,7 @@
     </div>
     <div>
       <app-citation-list-item
-        *ngFor="let citationEl of citations | filter:filterString:'fullCitation' | sortByDate:'createdAt' | sortByType:'type'; let i = index"
+        *ngFor="let citationEl of citations | filter:filterString:'fullCitation' | sortBy:modifiedSort ; let i = index"
         [citation]="citationEl"
         [index]="i"></app-citation-list-item>
     </div>

@@ -41,8 +41,8 @@ import { AbbreviateService } from './inputs/add-parties/abbreviate.service';
 import { CitationService } from './services/citation.service';
 import { SaveModalComponent } from './citation/save-modal/save-modal.component';
 import { FilterPipe } from './pipes/filter.pipe';
-import { SortByDatePipe } from './pipes/sort-by-date.pipe';
-import { SortByTypePipe } from './pipes/sort-by-type.pipe';
+import { SortByPipe } from './pipes/sort.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,8 +76,7 @@ import { SortByTypePipe } from './pipes/sort-by-type.pipe';
     CitationListFiltersComponent,
     SaveModalComponent,
     FilterPipe,
-    SortByDatePipe,
-    SortByTypePipe
+    SortByPipe,
   ],
   imports: [
     BrowserModule,
