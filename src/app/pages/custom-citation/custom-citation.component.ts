@@ -11,6 +11,7 @@ import { Citation } from '../../citation.model';
 })
 export class CustomCitationComponent implements OnInit {
   customCitation: FormGroup
+  date: any
   constructor( private citationsService: Citations,
                 private router: Router) { }
 
@@ -22,7 +23,8 @@ export class CustomCitationComponent implements OnInit {
     })
   }
   onSubmit() {
-    this.citationsService.addCitation(new Citation(this.customCitation.value.citation, 0, 'Jan 1, 2018', this.customCitation.value.type, this.customCitation.value.note))
+    this.date = new Date()
+    this.citationsService.addCitation(new Citation(this.customCitation.value.citation, this.date, this.date, this.customCitation.value.type, this.customCitation.value.note))
     this.citationsService.getCitations()
     this.router.navigate(['/citation-list'])
   }

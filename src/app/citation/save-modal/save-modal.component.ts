@@ -13,6 +13,7 @@ import { Citations } from 'src/app/services/citations.service';
 export class SaveModalComponent implements OnInit {
   type: string
   note: string
+  date: any
   constructor(private citationService: CitationService,
               private citationsService: Citations,
               private router: Router,
@@ -23,7 +24,8 @@ export class SaveModalComponent implements OnInit {
   }
 
   save() {
-    this.citationsService.addCitation(new Citation(this.citationService.citation, 0, 'Jan 2, 2018', this.type, this.note))
+    this.date = new Date()
+    this.citationsService.addCitation(new Citation(this.citationService.citation, this.date, this.date, this.type, this.note))
     this.citationsService.getCitations()
     this.dialogRef.close("It was saved");
     this.router.navigate(['/citation-list'])
