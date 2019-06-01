@@ -12,6 +12,7 @@ import { Citations } from '../../services/citations.service';
 export class CitationListComponent implements OnInit {
   citations: Citation[];
   subscription: Subscription
+  filterString = ''
   constructor(private citationsService: Citations) { }
 
   ngOnInit() {

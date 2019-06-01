@@ -1,6 +1,19 @@
 <div class="content-container__citation-list">
   <h1 class="citation-list__title">Citation List</h1>
-  <app-citation-list-filters></app-citation-list-filters>
+  <div class="citation-list__filter">
+    <div>
+      <input 
+        type="text" 
+        class="text-input-filter"
+        placeholder="Search citation"
+        [(ngModel)]="filterString"
+      />
+      <select class="select-filter">
+        <option>Date</option>
+        <option>Type</option>
+      </select>
+    </div>
+  </div>
   <div class="citation-list__container">
     <div class="list-header">
       <div class="citation">Citation</div>
@@ -11,14 +24,9 @@
     </div>
     <div>
       <app-citation-list-item
-        *ngFor="let citationEl of citations; let i = index"
+        *ngFor="let citationEl of citations | filter:filterString:'fullCitation' | sortByDate:'createdAt' | sortByType:'type'; let i = index"
         [citation]="citationEl"
         [index]="i"></app-citation-list-item>
     </div>
-  </div>
-  <div>
-    <!-- {props.citations.map((citation) => {
-      return <CitationListItem key={citation.id} {...citation} />
-    })} -->
   </div>
 </div>
