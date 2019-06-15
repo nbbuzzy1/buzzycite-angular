@@ -6,10 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 //Firebase
-// import { AngularFireModule } from '@angular/fire';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 // import { AngularFireStorageModule } from '@angular/fire/storage';
-// import { AngularFireAuthModule } from '@angular/fire/auth';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -47,6 +48,18 @@ import { CitationService } from './services/citation.service';
 import { SaveModalComponent } from './citation/save-modal/save-modal.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortByPipe } from './pipes/sort.pipe';
+import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth.guard';
+
+const config = {
+  apiKey: "AIzaSyASV6YoOKhpbJuaXWreOuisDS_8Qy9HKsQ",
+  authDomain: "buzzycite-angular.firebaseapp.com",
+  databaseURL: "https://buzzycite-angular.firebaseio.com",
+  projectId: "buzzycite-angular",
+  storageBucket: "buzzycite-angular.appspot.com",
+  messagingSenderId: "168647313287",
+  appId: "1:168647313287:web:fea2b30ef32ce5a0"
+}
 
 @NgModule({
   declarations: [
@@ -81,6 +94,7 @@ import { SortByPipe } from './pipes/sort.pipe';
     SaveModalComponent,
     FilterPipe,
     SortByPipe,
+    AuthComponent,
     // AuthComponent,
 
   ],
@@ -92,16 +106,14 @@ import { SortByPipe } from './pipes/sort.pipe';
     MatDialogModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    // FirebaseModule,
-    // NgxAuthFirebaseUIModule,
 
     //Firebase
-    // AngularFireModule.initializeApp(config),
-    // AngularFirestoreModule, // firestore
-    // AngularFireAuthModule, // auth
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
   ],
-  providers: [Citations, Inputs, AbbreviateService, CitationService],
+  providers: [Citations, Inputs, AbbreviateService, CitationService, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [SaveModalComponent]
 })

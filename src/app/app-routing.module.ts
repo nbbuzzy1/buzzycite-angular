@@ -11,9 +11,11 @@ import { AppealPrePrintComponent } from './courts/appeal-pre-print/appeal-pre-pr
 import { AbbreviateTermComponent } from './pages/abbreviate-term/abbreviate-term.component';
 import { CustomCitationComponent } from './pages/custom-citation/custom-citation.component';
 import { CitationListComponent } from './pages/citation-list/citation-list.component';
+import { AuthComponent } from './auth/auth.component'
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes =[
-  { path: '', component: DashboardPageComponent, },
+  { path: '', component: DashboardPageComponent, canActivate: [AuthGuard]},
   { path: 'supreme-post', component: SupremePostComponent},
   { path: 'appeal-post-print', component: AppealPostPrintComponent},
   { path: 'appeal-post-nonprint', component: AppealPostNonprintComponent},
@@ -22,8 +24,8 @@ const appRoutes: Routes =[
   { path: 'appeal-pre-nonprint', component: AppealPreNonprintComponent},
   { path: 'abbreviate-term', component: AbbreviateTermComponent},
   { path: 'custom-citation', component: CustomCitationComponent},
-  { path: 'citation-list', component: CitationListComponent },
-  // { path: 'auth', component: AuthComponent},
+  { path: 'citation-list', component: CitationListComponent, canActivate: [AuthGuard] },
+  { path: 'auth', component: AuthComponent},
 ]
 
 @NgModule({
