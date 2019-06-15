@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -34,7 +34,6 @@ import { AddWestlawLexisComponent } from './inputs/add-westlaw-lexis/add-westlaw
 import { CitationComponent } from './citation/citation/citation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CitationListItemComponent } from './pages/citation-list/citation-list-item/citation-list-item.component';
-import { CitationListFiltersComponent } from './pages/citation-list/citation-list-filters/citation-list-filters.component';
 import { Citations } from './services/citations.service';
 import { Inputs } from './services/inputs.service';
 import { AbbreviateService } from './inputs/add-parties/abbreviate.service';
@@ -42,6 +41,8 @@ import { CitationService } from './services/citation.service';
 import { SaveModalComponent } from './citation/save-modal/save-modal.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortByPipe } from './pipes/sort.pipe';
+import { DataStorageService } from './services/data-storage.service';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -73,21 +74,21 @@ import { SortByPipe } from './pipes/sort.pipe';
     AddWestlawLexisComponent,
     CitationComponent,
     CitationListItemComponent,
-    CitationListFiltersComponent,
     SaveModalComponent,
     FilterPipe,
     SortByPipe,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    // HttpModule,
     AppRoutingModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [Citations, Inputs, AbbreviateService, CitationService],
+  providers: [Citations, Inputs, AbbreviateService, CitationService, DataStorageService],
   bootstrap: [AppComponent],
   entryComponents: [SaveModalComponent]
 })

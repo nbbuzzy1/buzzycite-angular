@@ -11,6 +11,7 @@ import { AppealPrePrintComponent } from './courts/appeal-pre-print/appeal-pre-pr
 import { AbbreviateTermComponent } from './pages/abbreviate-term/abbreviate-term.component';
 import { CustomCitationComponent } from './pages/custom-citation/custom-citation.component';
 import { CitationListComponent } from './pages/citation-list/citation-list.component';
+import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes =[
   { path: '', component: DashboardPageComponent },
@@ -23,6 +24,7 @@ const appRoutes: Routes =[
   { path: 'abbreviate-term', component: AbbreviateTermComponent},
   { path: 'custom-citation', component: CustomCitationComponent},
   { path: 'citation-list', component: CitationListComponent},
+  { path: 'auth', component: AuthComponent},
 ]
 
 @NgModule({

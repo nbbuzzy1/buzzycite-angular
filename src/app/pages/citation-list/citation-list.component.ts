@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 
 import { Citation } from '../../citation.model';
 import { Citations } from '../../services/citations.service';
+import { DataStorageService } from '../../services/data-storage.service';
 
 @Component({
   selector: 'app-citation-list',
@@ -14,11 +15,18 @@ export class CitationListComponent implements OnInit {
   subscription: Subscription
   filterString = ''
   @ViewChild('sort', { static: false }) sort: ElementRef
-  modifiedSort = 'date'
+  modifiedSort = 'date';
+  loadedCitations = []
 
-  constructor(private citationsService: Citations) { }
+  constructor(private citationsService: Citations,
+    private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
+    // this.dataStorageService.fetchCitations().subscribe(citations => {
+    //   this.loadedCitations = citations
+    //   console.log(citations)
+    // })
+
     this.subscription = this.citationsService.citationsChanged
     .subscribe(
       (citations: Citation[]) => {
@@ -31,5 +39,7 @@ export class CitationListComponent implements OnInit {
   setSortFilter() {
     this.modifiedSort = this.sort.nativeElement.value
   }
-
 }
+
+
+

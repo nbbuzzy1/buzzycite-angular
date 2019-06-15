@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Citation } from 'src/app/citation.model';
 import { Citations } from 'src/app/services/citations.service';
+import { DataStorageService } from 'src/app/services/data-storage.service';
 
 @Component({
   selector: 'app-citation-list-item',
@@ -10,13 +11,15 @@ import { Citations } from 'src/app/services/citations.service';
 export class CitationListItemComponent implements OnInit {
   @Input() citation: Citation
   @Input() index: number
-  constructor(private citationsService: Citations) { }
+  constructor(private citationsService: Citations,
+              private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
+    // console.log(this.citationsService.citations)
+    // console.log(this.index)
   }
   deleteCitation() {
-    this.citationsService.citations.splice(this.index, 1);
-    this.citationsService.citationsChanged.next(this.citationsService.citations.slice())
-    console.log(this.citationsService.citations)
+    this.citationsService.deleteCitation(this.index)
+    this.dataStorageService.deleteCitation()
   }
 }
