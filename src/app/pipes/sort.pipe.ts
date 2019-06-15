@@ -17,7 +17,7 @@ export class SortByPipe implements PipeTransform {
     }
     if (sort === 'type') {
       return value.sort((a, b) => {
-        if (a.createdAt > b.createdAt) {
+        if (a.type.toLowerCase() > b.type.toLowerCase()) {
           return 1;
         } else {
           return -1

@@ -4,7 +4,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Citation } from '../../citation.model';
 import { Citations } from 'src/app/services/citations.service';
-import { DataStorageService } from 'src/app/services/data-storage.service';
 
 @Component({
   selector: 'app-save-modal',
@@ -18,7 +17,6 @@ export class SaveModalComponent implements OnInit {
   constructor(private citationService: CitationService,
               private citationsService: Citations,
               private router: Router,
-              private dataStorageService: DataStorageService,
               public dialogRef: MatDialogRef<SaveModalComponent>,
               @Inject(MAT_DIALOG_DATA) public data) { }
 
@@ -28,7 +26,6 @@ export class SaveModalComponent implements OnInit {
   save() {
     this.date = new Date()
     this.citationsService.addCitation(new Citation(this.citationService.citation, this.date, this.date, this.type, this.note))
-    this.dataStorageService.storeCitation(new Citation(this.citationService.citation, this.date, this.date, this.type, this.note))
     this.citationsService.getCitations()
     this.dialogRef.close("It was saved");
     this.router.navigate(['/citation-list'])

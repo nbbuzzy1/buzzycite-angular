@@ -5,6 +5,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+//Firebase
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SupremePostComponent } from './courts/supreme-post/supreme-post.component';
@@ -41,8 +47,6 @@ import { CitationService } from './services/citation.service';
 import { SaveModalComponent } from './citation/save-modal/save-modal.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortByPipe } from './pipes/sort.pipe';
-import { DataStorageService } from './services/data-storage.service';
-import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +81,8 @@ import { AuthComponent } from './auth/auth.component';
     SaveModalComponent,
     FilterPipe,
     SortByPipe,
-    AuthComponent,
+    // AuthComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -86,9 +91,17 @@ import { AuthComponent } from './auth/auth.component';
     AppRoutingModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    // FirebaseModule,
+    // NgxAuthFirebaseUIModule,
+
+    //Firebase
+    // AngularFireModule.initializeApp(config),
+    // AngularFirestoreModule, // firestore
+    // AngularFireAuthModule, // auth
+    // AngularFireStorageModule // storage
   ],
-  providers: [Citations, Inputs, AbbreviateService, CitationService, DataStorageService],
+  providers: [Citations, Inputs, AbbreviateService, CitationService],
   bootstrap: [AppComponent],
   entryComponents: [SaveModalComponent]
 })

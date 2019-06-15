@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { Citation } from '../citation.model';
 
 export class Citations {
+
   citationsChanged = new Subject<Citation[]>()
   citations: Citation[] = [
     new Citation('U.S. v. Virginia', 0, 'Jan 1, 2018', 'Constitutional Law Test', 'Good case'),
