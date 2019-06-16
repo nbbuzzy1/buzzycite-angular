@@ -22,11 +22,6 @@ export class CitationListComponent implements OnInit {
               private authService: AuthService) { }
 
   ngOnInit() {
-    // this.dataStorageService.fetchCitations().subscribe(citations => {
-    //   this.loadedCitations = citations
-    //   console.log(citations)
-    // })
-
     this.subscription = this.citationsService.citationsChanged
     .subscribe(
       (citations: Citation[]) => {

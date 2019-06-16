@@ -47,30 +47,25 @@ export class AuthService {
       'type': type,
       'note': note
     })
-
-    // let chartData;
-
-    // userRef.get().toPromise().then((querySnapshot) => {
-    //   chartData = querySnapshot.docs.map(doc => doc.data());
+    this.getData()  
+    // await userRef.get().toPromise().then(querySnapshot => {
+    //   this.citations = querySnapshot.docs.map(doc => doc.data())
     // })
-     
-    await userRef.get().toPromise().then(querySnapshot => {
-      this.citations = querySnapshot.docs.map(doc => doc.data())
-    })
-    console.log(this.citations[1])
+    // console.log(this.citations[1])
 
-    // userRef.get().toPromise().then(snapshot => {
-    //   snapshot.forEach(doc => {
-    //     console.log(doc.id, '=>', doc.data());
-    //   })
-    // })
+  }
+
+  public async deleteCitation() {
+    const userRef = this.afs.collection(`users/${this.userId}/citations`);
+    userRef.doc('h3eIajx4sqCmoPLWY5Mr').delete()
+    this.getData()
   }
   async getData() {
     const userRef = this.afs.collection(`users/${this.userId}/citations`);
     await userRef.get().toPromise().then(querySnapshot => {
       this.citations = querySnapshot.docs.map(doc => doc.data())
     })
-    console.log(this.citations)
+    // console.log(this.citations)
   } 
 
   // async getData() {
