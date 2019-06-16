@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpErrorResponse, HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 // import { AuthService } from './auth.service';
 
 @Injectable({
  providedIn: 'root'
 })
 export class FirebaseService {
+  userCollection: AngularFirestoreCollection = this.afs.collection('users')
 
- constructor(private http: HttpClient) { }
+ constructor(private afs: AngularFirestore) { }
 
  private handleError(res: HttpErrorResponse) {
   console.error(res);

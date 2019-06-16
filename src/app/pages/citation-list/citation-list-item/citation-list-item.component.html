@@ -1,9 +1,9 @@
 <div class="citation-container">
   <div class="citation">
-    {{ citation.fullCitation }}
+    {{ citation.citation }}
   </div>
   <div class="citation__date">
-    {{ citation.createdAtDisplay | date }}
+    {{ citation.date.seconds * 1000 | date:'MM-dd-yyyy' }}
   </div>
   <div class="citation__type">
     {{ citation.type }}
