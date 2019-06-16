@@ -50,13 +50,12 @@ export class AuthService {
         displayName: user.displayName, 
         photoURL: user.photoURL
       } 
-  
       return userRef.set(data, { merge: true })
   
     }
   
     async signOut() {
       await this.afAuth.auth.signOut();
-      this.router.navigate(['/']);
+      this.router.navigate(['/auth']);
     }
 }

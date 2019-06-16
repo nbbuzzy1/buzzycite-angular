@@ -4,6 +4,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Citation } from '../../citation.model';
 import { Citations } from 'src/app/services/citations.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-save-modal',
@@ -14,11 +16,16 @@ export class SaveModalComponent implements OnInit {
   type: string
   note: string
   date: any
+  user$: any
   constructor(private citationService: CitationService,
               private citationsService: Citations,
               private router: Router,
               public dialogRef: MatDialogRef<SaveModalComponent>,
-              @Inject(MAT_DIALOG_DATA) public data) { }
+              private authService: AuthService,
+              private firebaseService: FirebaseService,
+              @Inject(MAT_DIALOG_DATA) public data) {
+              this.authService.user$.subscribe(user => this.user$ = user) 
+               }
 
   ngOnInit() {
   }
