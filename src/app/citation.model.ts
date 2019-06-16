@@ -1,9 +1,7 @@
 export class Citation {
-  constructor (
-    public fullCitation: string, 
-    public createdAt: number,
-    public createdAtDisplay: string,
-    public type: string,
-    public note: string
-  ) {}
+  id?: string
+  citation?: string
+  date?: string
+  type?: string
+  note?: string
 }

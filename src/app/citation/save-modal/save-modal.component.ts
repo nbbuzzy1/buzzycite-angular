@@ -23,18 +23,20 @@ export class SaveModalComponent implements OnInit {
               public dialogRef: MatDialogRef<SaveModalComponent>,
               public authService: AuthService,
               private firebaseService: FirebaseService,
-              @Inject(MAT_DIALOG_DATA) public data) {
-              // this.authService.user$.subscribe(user => this.user$ = user) 
-               }
+              @Inject(MAT_DIALOG_DATA) public data) {}
 
   ngOnInit() {
   }
 
   save() {
     this.date = new Date()
-    this.citationsService.addCitation(new Citation(this.citationService.citation, this.date, this.date, this.type, this.note))
-    this.citationsService.getCitations()
-    this.authService.addCitation(this.citationService.citation, this.date, this.type, this.note)
+    let citation: Citation = {
+      citation: this.citationService.citation,
+      date: this.date,
+      type: this.type,
+      note: this.note
+    }
+    this.authService.addCitation(citation)
     this.dialogRef.close("It was saved");
     this.router.navigate(['/citation-list'])
   }

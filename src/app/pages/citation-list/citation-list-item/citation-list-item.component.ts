@@ -18,7 +18,7 @@ export class CitationListItemComponent implements OnInit {
     // console.log(this.citationsService.citations)
     // console.log(this.index)
   }
-  onDeleteCitation() {
-    this.authService.deleteCitation()
+  onDeleteCitation(event, citation) {
+    this.authService.deleteCitation(citation)
   }
 }

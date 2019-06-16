@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Citations } from '../../services/citations.service'
 import { Citation } from '../../citation.model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-custom-citation',
@@ -12,7 +13,7 @@ import { Citation } from '../../citation.model';
 export class CustomCitationComponent implements OnInit {
   customCitation: FormGroup
   date: any
-  constructor( private citationsService: Citations,
+  constructor( private authService: AuthService,
                 private router: Router) { }
 
   ngOnInit() {
@@ -24,8 +25,13 @@ export class CustomCitationComponent implements OnInit {
   }
   onSubmit() {
     this.date = new Date()
-    this.citationsService.addCitation(new Citation(this.customCitation.value.citation, this.date, this.date, this.customCitation.value.type, this.customCitation.value.note))
-    this.citationsService.getCitations()
+    let citation: Citation = {
+      citation: this.customCitation.value.citation,
+      date: this.date,
+      type: this.customCitation.value.type,
+      note: this.customCitation.value.note
+    }
+    this.authService.addCitation(citation)
     this.router.navigate(['/citation-list'])
   }
 }

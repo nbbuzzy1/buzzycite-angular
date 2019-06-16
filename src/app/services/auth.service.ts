@@ -5,10 +5,11 @@ import { Citation } from '../../app/citation.model'
 
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+// import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +18,11 @@ export class AuthService {
 
   user$: Observable<User>;
   userId: string;
-  citations: any
+  citations
 
   constructor(
       private afAuth: AngularFireAuth,
-      private afs: AngularFirestore,
+      public afs: AngularFirestore,
       private router: Router
   ) {
     this.user$ = this.afAuth.authState.pipe(
@@ -39,41 +40,28 @@ export class AuthService {
     )
   }
 
-  async addCitation(citation, date, type, note) {
+  async addCitation(citation: Citation) {
     const userRef = this.afs.collection(`users/${this.userId}/citations`);
-    userRef.add({
-      'citation': citation,
-      'date': date,
-      'type': type,
-      'note': note
-    })
-    this.getData()  
-    // await userRef.get().toPromise().then(querySnapshot => {
-    //   this.citations = querySnapshot.docs.map(doc => doc.data())
-    // })
-    // console.log(this.citations[1])
-
+    userRef.add(citation)
   }
 
-  public async deleteCitation() {
+  public async deleteCitation(citation) {
     const userRef = this.afs.collection(`users/${this.userId}/citations`);
-    userRef.doc('h3eIajx4sqCmoPLWY5Mr').delete()
+    userRef.doc(citation.id).delete()
     this.getData()
   }
+
   async getData() {
     const userRef = this.afs.collection(`users/${this.userId}/citations`);
     await userRef.get().toPromise().then(querySnapshot => {
-      this.citations = querySnapshot.docs.map(doc => doc.data())
+      this.citations = querySnapshot.docs.map(doc => {
+        const data = doc.data()
+        const id = doc.id
+        return { id, ...data }
+      })
     })
-    // console.log(this.citations)
+    console.log(this.citations)
   } 
-
-  // async getData() {
-  //   let events = [];
-  //   const snapshot = await this.afs.collection(`users/${this.userId}/citations`).get()
-  //   snapshot.forEach((doc) => events.push(doc));
-  //   console.log(events)
-  // }
 
   async googleSignin() {
     const provider = new auth.GoogleAuthProvider();
@@ -95,13 +83,28 @@ export class AuthService {
 
   }
 
-  private setUserCitations(user) {
-
-  }
-
-
   async signOut() {
     await this.afAuth.auth.signOut();
     this.router.navigate(['/auth']);
   }
 }
+
+  // async addCitation(citation, date, type, note) {
+  //   const userRef = this.afs.collection(`users/${this.userId}/citations`);
+  //   userRef.add({
+  //     'citation': citation,
+  //     'date': date,
+  //     'type': type,
+  //     'note': note
+  //   })
+  //   this.getData()  
+  // }
+
+      // this.citations = this.afs.collection<Citation>(`users/${this.userId}/citations`)
+    // .snapshotChanges().map(actions => {
+    //   return actions.map(a => {
+    //     const data = a.payload.doc.data() as Citation;
+    //     data.id = a.payload.doc.id;
+    //     return data
+    //   })
+    // })

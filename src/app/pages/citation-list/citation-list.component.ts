@@ -22,13 +22,13 @@ export class CitationListComponent implements OnInit {
               private authService: AuthService) { }
 
   ngOnInit() {
-    this.subscription = this.citationsService.citationsChanged
-    .subscribe(
-      (citations: Citation[]) => {
-        this.citations = citations
-      }
-    )
-    this.citations = this.citationsService.getCitations();
+    // this.subscription = this.citationsService.citationsChanged
+    // .subscribe(
+    //   (citations: Citation[]) => {
+    //     this.citations = citations
+    //   }
+    // )
+    // this.citations = this.citationsService.getCitations();
   }
 
   setSortFilter() {
