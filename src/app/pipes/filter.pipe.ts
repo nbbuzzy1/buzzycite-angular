@@ -9,9 +9,11 @@ export class FilterPipe implements PipeTransform {
   constructor(private authService: AuthService) {}
 
   transform(value: any, filterString: string, propName: string) {
-    return value.filter((citation) => {
-      const textMatch = citation[propName].toLowerCase().includes(filterString.toLowerCase());
-      return textMatch
-    })
+    if (this.authService.citations) {
+      return value.filter((citation) => {
+        const textMatch = citation[propName].toLowerCase().includes(filterString.toLowerCase());
+        return textMatch
+      })
+    }
   }
 }

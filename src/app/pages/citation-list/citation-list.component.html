@@ -24,7 +24,7 @@
     </div>
     <div>
       <app-citation-list-item
-        *ngFor="let citationEl of this.authService.citations ; let i = index"
+        *ngFor="let citationEl of this.authService.citations | filter:filterString:'citation' | sortBy:modifiedSort; let i = index"
         [citation]="citationEl"
         [index]="i"></app-citation-list-item>
     </div>
