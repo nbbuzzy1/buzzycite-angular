@@ -67,6 +67,7 @@ export class AuthService {
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
     return this.updateUserData(credential.user);
+
   }
 
   private updateUserData(user) {
@@ -79,6 +80,7 @@ export class AuthService {
       displayName: user.displayName, 
       photoURL: user.photoURL
     } 
+    this.router.navigate(['/'])
     return userRef.set(data, { merge: true })
 
   }
