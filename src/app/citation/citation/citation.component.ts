@@ -13,8 +13,8 @@ import { SaveModalComponent } from '../save-modal/save-modal.component';
 export class CitationComponent {
   today: number = Date.now()
   test: string = 'hello'
-  constructor(private inputsService: Inputs,
-              private citationService: CitationService,
+  constructor(public inputsService: Inputs,
+              public citationService: CitationService,
               public dialog: MatDialog) {}
 
   startCopyCitation(citationText) {

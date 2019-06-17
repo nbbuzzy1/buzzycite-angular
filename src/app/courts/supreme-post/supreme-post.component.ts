@@ -9,8 +9,8 @@ import { CitationService } from 'src/app/services/citation.service';
 })
 export class SupremePostComponent implements OnDestroy {
 
-  constructor(private inputsService: Inputs,
-              private citationService: CitationService) {}
+  constructor(public inputsService: Inputs,
+              public citationService: CitationService) {}
 
   ngOnDestroy() {
     this.inputsService.removeCitation();

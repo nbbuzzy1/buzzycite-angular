@@ -9,8 +9,8 @@ import { CitationService } from '../../services/citation.service'
 })
 export class SupremePreComponent implements OnDestroy {
 
-  constructor(private inputsService: Inputs,
-    private citationService: CitationService) {}
+  constructor(public inputsService: Inputs,
+    public citationService: CitationService) {}
   
   ngOnDestroy() {
     this.inputsService.removeCitation();

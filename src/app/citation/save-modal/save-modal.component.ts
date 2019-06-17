@@ -15,7 +15,7 @@ export class SaveModalComponent implements OnInit {
   note: string = ''
   date: any
   // user$: any
-  constructor(private citationService: CitationService,
+  constructor(public citationService: CitationService,
               private router: Router,
               public dialogRef: MatDialogRef<SaveModalComponent>,
               public firebaseService: FirebaseService,

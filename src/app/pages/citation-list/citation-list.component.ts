@@ -17,7 +17,7 @@ export class CitationListComponent implements OnInit {
   modifiedSort = 'date';
   loadedCitations
 
-  constructor(private firebaseService: FirebaseService) { }
+  constructor(public firebaseService: FirebaseService) { }
 
   ngOnInit() {
   }

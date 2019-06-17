@@ -9,7 +9,8 @@ import { Inputs } from '../../services/inputs.service';
 export class AddWestlawLexisComponent {
   // @ViewChild('westlawNo') westlawNo: ElementRef
   // @ViewChild('lexisNo') lexisNo: ElementRef
-
+  lexis
+  westlaw
   constructor(public inputsService: Inputs) {}
 
   // setWestlawDisplay() {

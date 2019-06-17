@@ -8,7 +8,8 @@ import { Inputs } from 'src/app/services/inputs.service';
   styleUrls: ['./add-parties.component.sass']
 })
 export class AddPartiesComponent {
-
+  partyOne
+  partyTwo
   constructor(public inputsService: Inputs) {}
 
 }
