@@ -1,14 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { FirebaseService } from '../services/firebase.service';
 
 @Pipe({
   name: 'sortBy'
 })
 export class SortByPipe implements PipeTransform {
-  constructor(private authService: AuthService) {}
+  constructor(private firebaseService: FirebaseService) {}
 
   transform(value: any, sort: string) {
-    if (this.authService.citations) {
+    if (this.firebaseService.citations) {
       if (sort === 'date') {
         return value.sort((a, b) => {
           if (a.data < b.data) {

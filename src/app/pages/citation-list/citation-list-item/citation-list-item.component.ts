@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Citation } from 'src/app/citation.model';
-import { Citations } from 'src/app/services/citations.service';
-import { AuthService } from 'src/app/services/auth.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-citation-list-item',
@@ -11,14 +10,11 @@ import { AuthService } from 'src/app/services/auth.service';
 export class CitationListItemComponent implements OnInit {
   @Input() citation
   @Input() index: number
-  constructor(private citationsService: Citations,
-              private authService: AuthService) { }
+  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
-    // console.log(this.citationsService.citations)
-    // console.log(this.index)
   }
   onDeleteCitation(event, citation) {
-    this.authService.deleteCitation(citation)
+    this.firebaseService.deleteCitation(citation)
   }
 }

@@ -30,9 +30,6 @@ import { AbbreviateTermComponent } from './pages/abbreviate-term/abbreviate-term
 import { CitationListComponent } from './pages/citation-list/citation-list.component';
 import { CustomCitationComponent } from './pages/custom-citation/custom-citation.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { LoadingPageComponent } from './pages/loading-page/loading-page.component';
-import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { AddCountyComponent } from './inputs/add-county/add-county.component';
 import { AddDistrictComponent } from './inputs/add-district/add-district.component';
 import { AddMonthDayComponent } from './inputs/add-month-day/add-month-day.component';
@@ -49,6 +46,7 @@ import { SaveModalComponent } from './citation/save-modal/save-modal.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortByPipe } from './pipes/sort.pipe';
 import { AuthComponent } from './auth/auth.component';
+import { FirebaseService } from './services/firebase.service';
 import { AuthGuard } from './auth/auth.guard';
 
 const config = {
@@ -81,9 +79,6 @@ const config = {
     CitationListComponent,
     CustomCitationComponent,
     DashboardPageComponent,
-    LoginPageComponent,
-    LoadingPageComponent,
-    NotFoundPageComponent,
     AddCountyComponent,
     AddDistrictComponent,
     AddMonthDayComponent,
@@ -95,8 +90,6 @@ const config = {
     FilterPipe,
     SortByPipe,
     AuthComponent,
-    // AuthComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -111,9 +104,8 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    // AngularFireStorageModule // storage
   ],
-  providers: [Citations, Inputs, AbbreviateService, CitationService, AuthGuard],
+  providers: [Citations, Inputs, AbbreviateService, CitationService, FirebaseService, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [SaveModalComponent]
 })

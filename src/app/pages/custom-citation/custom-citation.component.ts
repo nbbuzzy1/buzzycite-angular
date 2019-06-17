@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
-import { Citations } from '../../services/citations.service'
 import { Citation } from '../../citation.model';
-import { AuthService } from 'src/app/services/auth.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-custom-citation',
@@ -13,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class CustomCitationComponent implements OnInit {
   customCitation: FormGroup
   date: any
-  constructor( private authService: AuthService,
+  constructor( private firebaseService: FirebaseService,
                 private router: Router) { }
 
   ngOnInit() {
@@ -31,7 +30,7 @@ export class CustomCitationComponent implements OnInit {
       type: this.customCitation.value.type,
       note: this.customCitation.value.note
     }
-    this.authService.addCitation(citation)
+    this.firebaseService.addCitation(citation)
     this.router.navigate(['/citation-list'])
   }
 }
