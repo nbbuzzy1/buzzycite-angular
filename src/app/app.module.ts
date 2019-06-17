@@ -102,7 +102,7 @@ const config = {
 
     //Firebase
     AngularFireModule.initializeApp(config),
-    AngularFirestoreModule, // firestore
+    AngularFirestoreModule.enablePersistence(), // firestore
     AngularFireAuthModule, // auth
   ],
   providers: [Citations, Inputs, AbbreviateService, CitationService, FirebaseService, AuthGuard],

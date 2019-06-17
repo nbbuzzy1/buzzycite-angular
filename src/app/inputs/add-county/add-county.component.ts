@@ -7,5 +7,5 @@ import { Inputs } from '../../services/inputs.service'
   styleUrls: ['./add-county.component.sass']
 })
 export class AddCountyComponent {
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
 }

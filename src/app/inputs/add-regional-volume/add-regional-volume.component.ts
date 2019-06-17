@@ -9,7 +9,7 @@ import { Inputs } from '../../services/inputs.service';
 export class AddRegionalVolumeComponent {
   @ViewChild('regionalReporter', { static: false }) regionalReporter: ElementRef
 
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
 
   setRegionalReporter() {
     this.inputsService.regionalReporter = this.regionalReporter.nativeElement.value

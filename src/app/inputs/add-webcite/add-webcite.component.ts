@@ -7,6 +7,6 @@ import { Inputs } from '../../services/inputs.service';
   styleUrls: ['./add-webcite.component.sass']
 })
 export class AddWebciteComponent {
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
   
 }

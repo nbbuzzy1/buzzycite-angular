@@ -9,7 +9,7 @@ import { Inputs } from '../../services/inputs.service'
 export class AddOhioAppVolumeComponent {
   @ViewChild('ohioReporter', { static: false }) ohioReporter: ElementRef
 
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
 
   setOhioReporter() {
     this.inputsService.ohioReporter = this.ohioReporter.nativeElement.value

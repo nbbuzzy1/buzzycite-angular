@@ -9,6 +9,6 @@ import { Inputs } from 'src/app/services/inputs.service';
 })
 export class AddPartiesComponent {
 
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
 
 }

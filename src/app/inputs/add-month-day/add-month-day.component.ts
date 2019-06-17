@@ -9,7 +9,7 @@ import { Inputs } from '../../services/inputs.service';
 export class AddMonthDayComponent {
   @ViewChild('month', { static: false }) month: ElementRef
 
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
 
   setMonth() {
     this.inputsService.month = this.month.nativeElement.value

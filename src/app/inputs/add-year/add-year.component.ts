@@ -7,6 +7,6 @@ import { Inputs } from '../../services/inputs.service';
   styleUrls: ['./add-year.component.sass']
 })
 export class AddYearComponent {
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
   
 }

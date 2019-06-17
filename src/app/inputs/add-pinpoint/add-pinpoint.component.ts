@@ -8,6 +8,6 @@ import { Inputs } from '../../services/inputs.service';
 })
 export class AddPinpointComponent {
 
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
   
 }

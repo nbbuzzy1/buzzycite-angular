@@ -9,7 +9,7 @@ import { Inputs } from '../../services/inputs.service';
 export class AddDistrictComponent {
   @ViewChild('district', { static: false }) district: ElementRef
 
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
 
   setDistrict() {
     this.inputsService.district = this.district.nativeElement.value

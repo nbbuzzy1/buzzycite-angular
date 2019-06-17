@@ -10,7 +10,7 @@ export class AddWestlawLexisComponent {
   // @ViewChild('westlawNo') westlawNo: ElementRef
   // @ViewChild('lexisNo') lexisNo: ElementRef
 
-  constructor(private inputsService: Inputs) {}
+  constructor(public inputsService: Inputs) {}
 
   // setWestlawDisplay() {
   //   this.inputsService.westlaw = this.westlawNo.nativeElement.value

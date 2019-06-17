@@ -4,15 +4,15 @@
 
 export const environment = {
   production: false,
-  // firebase: {
-  //   apiKey: "AIzaSyDXb8zMKZScNVh-o_8adBmfv-70CnaxiBY",
-  //   authDomain: "buzzycite-ng-2.firebaseapp.com",
-  //   databaseURL: "https://buzzycite-ng-2.firebaseio.com",
-  //   projectId: "buzzycite-ng-2",
-  //   storageBucket: "buzzycite-ng-2.appspot.com",
-  //   messagingSenderId: "194544885302",
-  //   appId: "1:194544885302:web:870c02f08abfd2e1"
-  // }
+  firebase: {
+    apiKey: "AIzaSyASV6YoOKhpbJuaXWreOuisDS_8Qy9HKsQ",
+    authDomain: "buzzycite-angular.firebaseapp.com",
+    databaseURL: "https://buzzycite-angular.firebaseio.com",
+    projectId: "buzzycite-angular",
+    storageBucket: "buzzycite-angular.appspot.com",
+    messagingSenderId: "168647313287",
+    appId: "1:168647313287:web:fea2b30ef32ce5a0"
+  }
 };
 
 /*

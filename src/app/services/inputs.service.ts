@@ -4,7 +4,7 @@ import { AbbreviateService } from '../inputs/add-parties/abbreviate.service';
 @Injectable()
 export class Inputs {
 
-  constructor(private abbreviateService: AbbreviateService) {}
+  constructor(public abbreviateService: AbbreviateService) {}
 
   partyOne: string
   partyTwo: string
