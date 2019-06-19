@@ -11,7 +11,7 @@ export class SortByPipe implements PipeTransform {
     if (this.firebaseService.citations) {
       if (sort === 'date') {
         return value.sort((a, b) => {
-          if (a.data < b.data) {
+          if (a.date < b.date) {
             return 1;
           } else {
             return -1
