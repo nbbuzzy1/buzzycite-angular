@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, Output } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Inputs } from '../../services/inputs.service'
 
 @Component({

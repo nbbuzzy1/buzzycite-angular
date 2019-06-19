@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { Inputs } from '../../services/inputs.service';
 
 @Component({
@@ -7,26 +8,9 @@ import { Inputs } from '../../services/inputs.service';
   styleUrls: ['./add-westlaw-lexis.component.sass']
 })
 export class AddWestlawLexisComponent {
-  // @ViewChild('westlawNo') westlawNo: ElementRef
-  // @ViewChild('lexisNo') lexisNo: ElementRef
-  lexis
-  westlaw
+  lexis: string;
+  westlaw: string;
+
   constructor(public inputsService: Inputs) {}
 
-  // setWestlawDisplay() {
-  //   this.inputsService.westlaw = this.westlawNo.nativeElement.value
-  //   if (this.inputsService.westlaw) {
-  //     this.inputsService.westlawDisplay = `WL ${this.westlawNo.nativeElement.value}`
-  //   } else {
-  //     this.inputsService.westlawDisplay = '';
-  //   }
-  // }
-  // setLexisDisplay() {
-  //   this.inputsService.lexis = this.lexisNo.nativeElement.value
-  //   if (this.inputsService.lexis) {
-  //     this.inputsService.lexisDisplay = `LEXIS ${this.lexisNo.nativeElement.value}`;
-  //   } else {
-  //     this.inputsService.lexisDisplay = '';
-  //   }
-  // }
 }
