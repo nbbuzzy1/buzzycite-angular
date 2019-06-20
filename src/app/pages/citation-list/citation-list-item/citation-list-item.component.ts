@@ -9,7 +9,7 @@ import { Citation } from 'src/app/citation/citation.model';
   styleUrls: ['./citation-list-item.component.sass']
 })
 export class CitationListItemComponent {
-  @Input() citation: Citation;
+  @Input() citation;
   @Input() index: number;
 
   constructor(private firebaseService: FirebaseService) { }
@@ -17,5 +17,5 @@ export class CitationListItemComponent {
   onDeleteCitation(event, citation) {
     this.firebaseService.deleteCitation(citation)
   };
-  
+
 };
