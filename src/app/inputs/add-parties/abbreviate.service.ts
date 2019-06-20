@@ -839,5 +839,5 @@ export class AbbreviateService {
     };
     let abbParty = splitParty.join(" ");
     return abbParty;
-  }
-}
+  };
+};

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { FirebaseService } from '../services/firebase.service'
 
 @Component({
@@ -6,11 +7,8 @@ import { FirebaseService } from '../services/firebase.service'
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.sass']
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent {
 
   constructor(public firebaseService: FirebaseService) { }
-
-  ngOnInit() {
-  }
 
 }

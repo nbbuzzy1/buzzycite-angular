@@ -8,6 +8,7 @@ import { CitationService } from '../../services/citation.service'
   templateUrl: './supreme-pre.component.html',
   styleUrls: ['./supreme-pre.component.sass']
 })
+
 export class SupremePreComponent implements OnDestroy {
 
   constructor(public inputsService: Inputs,
@@ -16,5 +17,5 @@ export class SupremePreComponent implements OnDestroy {
   ngOnDestroy() {
     this.inputsService.removeCitation();
     this.citationService.removeCitation();
-  }
-}
+  };
+};

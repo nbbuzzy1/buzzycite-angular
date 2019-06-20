@@ -7,8 +7,8 @@ import { Inputs } from '../../services/inputs.service';
   templateUrl: './add-year.component.html',
   styleUrls: ['./add-year.component.sass']
 })
+
 export class AddYearComponent {
 
   constructor(public inputsService: Inputs) {}
-  
-}
+};

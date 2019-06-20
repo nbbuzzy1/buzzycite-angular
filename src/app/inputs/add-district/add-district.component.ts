@@ -7,12 +7,13 @@ import { Inputs } from '../../services/inputs.service';
   templateUrl: './add-district.component.html',
   styleUrls: ['./add-district.component.sass']
 })
+
 export class AddDistrictComponent {
-  @ViewChild('district', { static: false }) district: ElementRef
+  @ViewChild('district', { static: false }) district: ElementRef;
 
   constructor(public inputsService: Inputs) {}
 
   setDistrict() {
     this.inputsService.district = this.district.nativeElement.value
-  }
+  };
 }

@@ -1,12 +1,12 @@
 <header class="header">
   <div class="content-container">
     <div class="header__content">
-        <h1 class="header__title" routerLink='/' style="cursor:pointer">BuzzyCite</h1>
-        <div class="header__citationList" routerLink='/citation-list'>
-          <div class="scaleLabel">My Citations</div>
-          <i id="headerScale" class="fas fa-lg fa-2x fa-balance-scale"></i>
-        </div>
-        <button class="header__button" (click)="this.firebaseService.signOut()">Logout</button>
+      <h1 class="header__title" routerLink='/' style="cursor:pointer">BuzzyCite</h1>
+      <div class="header__citationList" routerLink='/citation-list'>
+        <div class="scaleLabel">My Citations</div>
+        <i id="headerScale" class="fas fa-lg fa-2x fa-balance-scale"></i>
+      </div>
+      <button class="header__button" (click)="this.firebaseService.signOut()">Logout</button>
     </div>
   </div>
 </header>

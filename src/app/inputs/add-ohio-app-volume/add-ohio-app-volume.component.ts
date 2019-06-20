@@ -7,12 +7,13 @@ import { Inputs } from '../../services/inputs.service'
   templateUrl: './add-ohio-app-volume.component.html',
   styleUrls: ['./add-ohio-app-volume.component.sass']
 })
+
 export class AddOhioAppVolumeComponent {
-  @ViewChild('ohioReporter', { static: false }) ohioReporter: ElementRef
+  @ViewChild('ohioReporter', { static: false }) ohioReporter: ElementRef;
 
   constructor(public inputsService: Inputs) {}
 
   setOhioReporter() {
     this.inputsService.ohioReporter = this.ohioReporter.nativeElement.value
-  }
-}
+  };
+};

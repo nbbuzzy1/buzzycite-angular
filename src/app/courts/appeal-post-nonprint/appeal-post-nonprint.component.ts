@@ -8,13 +8,14 @@ import { CitationService } from '../../services/citation.service';
   templateUrl: './appeal-post-nonprint.component.html',
   styleUrls: ['./appeal-post-nonprint.component.sass']
 })
+
 export class AppealPostNonprintComponent implements OnDestroy {
   
   constructor(public inputsService: Inputs,
-    public citationService: CitationService) {}
+              public citationService: CitationService) {}
 
   ngOnDestroy() {
     this.inputsService.removeCitation();
     this.citationService.removeCitation();
-  }
-}
+  };
+};

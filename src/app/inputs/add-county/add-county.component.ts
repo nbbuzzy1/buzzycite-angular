@@ -7,6 +7,8 @@ import { Inputs } from '../../services/inputs.service'
   templateUrl: './add-county.component.html',
   styleUrls: ['./add-county.component.sass']
 })
+
 export class AddCountyComponent {
+  
   constructor(public inputsService: Inputs) {}
 }

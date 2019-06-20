@@ -7,12 +7,13 @@ import { Inputs } from '../../services/inputs.service';
   templateUrl: './add-regional-volume.component.html',
   styleUrls: ['./add-regional-volume.component.sass']
 })
+
 export class AddRegionalVolumeComponent {
-  @ViewChild('regionalReporter', { static: false }) regionalReporter: ElementRef
+  @ViewChild('regionalReporter', { static: false }) regionalReporter: ElementRef;
 
   constructor(public inputsService: Inputs) {}
 
   setRegionalReporter() {
     this.inputsService.regionalReporter = this.regionalReporter.nativeElement.value
-  }
-}
+  };
+};

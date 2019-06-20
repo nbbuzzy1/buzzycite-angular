@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { CitationService } from 'src/app/services/citation.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -10,30 +10,28 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   templateUrl: './save-modal.component.html',
   styleUrls: ['./save-modal.component.sass']
 })
-export class SaveModalComponent implements OnInit {
-  type: string = ''
-  note: string = ''
-  date: any
-  // user$: any
+
+export class SaveModalComponent {
+  type: string = '';
+  note: string = '';
+  date;
+
   constructor(public citationService: CitationService,
               private router: Router,
               public dialogRef: MatDialogRef<SaveModalComponent>,
               public firebaseService: FirebaseService,
               @Inject(MAT_DIALOG_DATA) public data) {}
 
-  ngOnInit() {
-  }
-
   save() {
-    this.date = new Date()
+    this.date = new Date();
     let citation: Citation = {
       citation: this.citationService.citation,
       date: this.date,
       type: this.type,
       note: this.note
-    }
-    this.firebaseService.addCitation(citation)
+    };
+    this.firebaseService.addCitation(citation);
     this.dialogRef.close("It was saved");
-    this.router.navigate(['/citation-list'])
-  }
-}
+    this.router.navigate(['/citation-list']);
+  };
+};

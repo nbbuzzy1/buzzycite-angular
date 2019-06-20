@@ -12,5 +12,4 @@ export class AddWestlawLexisComponent {
   westlaw: string;
 
   constructor(public inputsService: Inputs) {}
-
-}
+};

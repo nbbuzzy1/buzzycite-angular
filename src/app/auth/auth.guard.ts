@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-
-import { FirebaseService} from '../services/firebase.service'
 import { Observable } from 'rxjs';
 import { tap, map, take } from 'rxjs/operators';
 
+import { FirebaseService} from '../services/firebase.service'
+
 @Injectable()
 export class AuthGuard implements CanActivate {
+
   constructor(private firebaseService: FirebaseService, private router: Router) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
@@ -15,10 +16,10 @@ export class AuthGuard implements CanActivate {
       map(user => !!user), // <-- map to boolean
       tap(loggedIn => {
         if (!loggedIn) {
-          console.log('access denied')
+          console.log('access denied');
           this.router.navigate(['/auth']);
-        }
+        };
       })
-    )
-  }
-}
+    );
+  };
+};

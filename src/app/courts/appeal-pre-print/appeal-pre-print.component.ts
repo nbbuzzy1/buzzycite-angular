@@ -8,6 +8,7 @@ import { CitationService } from '../../services/citation.service';
   templateUrl: './appeal-pre-print.component.html',
   styleUrls: ['./appeal-pre-print.component.sass']
 })
+
 export class AppealPrePrintComponent implements OnDestroy {
 
   constructor(public inputsService: Inputs,
@@ -16,5 +17,5 @@ export class AppealPrePrintComponent implements OnDestroy {
   ngOnDestroy() {
     this.inputsService.removeCitation();
     this.citationService.removeCitation();
-  }
-}
+  };
+};

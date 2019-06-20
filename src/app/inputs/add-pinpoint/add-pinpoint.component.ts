@@ -7,8 +7,8 @@ import { Inputs } from '../../services/inputs.service';
   templateUrl: './add-pinpoint.component.html',
   styleUrls: ['./add-pinpoint.component.sass']
 })
+
 export class AddPinpointComponent {
 
   constructor(public inputsService: Inputs) {}
-  
-}
+};
