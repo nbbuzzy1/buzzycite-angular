@@ -32,7 +32,7 @@ export class CitationComponent {
   };
   
   onRemoveCitation() {
-    this.inputsService.removeCitation()
+    this.inputsService.removeInputs()
     this.citationService.citation = '';
     this.citationService.remainingCitation = '';
     this.citationService.inputsFilled = false;

@@ -2,7 +2,8 @@ import { Component, Inject } from '@angular/core';
 import { CitationService } from 'src/app/services/citation.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Citation } from '../../citation.model';
+
+import { Citation } from '../citation.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({

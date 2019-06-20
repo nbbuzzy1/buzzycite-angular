@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+
 import { FirebaseService } from '../services/firebase.service';
 
 @Pipe({
@@ -14,6 +15,6 @@ export class FilterPipe implements PipeTransform {
         const textMatch = citation[propName].toLowerCase().includes(filterString.toLowerCase());
         return textMatch
       })
-    }
-  }
-}
+    };
+  };
+};

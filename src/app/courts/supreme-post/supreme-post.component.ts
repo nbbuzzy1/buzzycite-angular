@@ -15,7 +15,7 @@ export class SupremePostComponent implements OnDestroy {
               public citationService: CitationService) {}
 
   ngOnDestroy() {
-    this.inputsService.removeCitation();
+    this.inputsService.removeInputs();
     this.citationService.removeCitation();
   };
 };

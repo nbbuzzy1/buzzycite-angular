@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AbbreviateService } from '../../inputs/add-parties/abbreviate.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { AbbreviateService } from '../../inputs/add-parties/abbreviate.service';
   styleUrls: ['./abbreviate-term.component.sass'],
   providers: [AbbreviateService]
 })
-export class AbbreviateTermComponent implements OnInit {
+export class AbbreviateTermComponent {
   fullTerm: string = '';
   abbTerm: string = '';
 
@@ -15,9 +15,5 @@ export class AbbreviateTermComponent implements OnInit {
 
   abbreviateTerm() {
     this.abbTerm = this.abbreviateService.abbreviateParty(this.fullTerm)
-  }
-
-  ngOnInit() {
-  }
-
-}
+  };
+};

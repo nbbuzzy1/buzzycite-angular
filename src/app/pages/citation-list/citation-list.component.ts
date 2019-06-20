@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { Citation } from '../../citation.model';
+import { Citation } from '../../citation/citation.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   templateUrl: './citation-list.component.html',
   styleUrls: ['./citation-list.component.sass']
 })
+
 export class CitationListComponent implements OnInit {
   citations: Citation[];
   subscription: Subscription

@@ -63,4 +63,5 @@ const config = {
   providers: [Inputs, AbbreviateService, CitationService, FirebaseService, AuthGuard],
   bootstrap: [AppComponent],
 })
+
 export class AppModule { }

@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../auth/user.model'
-import { Citation } from '../citation.model'
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { User } from '../auth/user.model';
+import { Citation } from '../citation/citation.model';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class FirebaseService {
 
   user$: Observable<User>;
   userId: string;
-  citations: Citation[]
+  citations: Citation[];
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -37,18 +38,18 @@ export class FirebaseService {
         }
       })
     )
-  }
+  };
 
   async addCitation(citation: Citation) {
     const userRef = this.afs.collection(`users/${this.userId}/citations`);
     userRef.add(citation)
-  }
+  };
 
   public async deleteCitation(citation: Citation) {
     const userRef = this.afs.collection(`users/${this.userId}/citations`);
     userRef.doc(citation.id).delete()
     this.getData()
-  }
+  };
 
   async getData() {
     const userRef = this.afs.collection(`users/${this.userId}/citations`);
@@ -59,13 +60,13 @@ export class FirebaseService {
         return { id, ...data }
       })
     })
-  } 
+  };
 
   async googleSignin() {
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
     return this.updateUserData(credential.user);
-  }
+  };
 
   private updateUserData(user) {
     // Sets user data to firestore on login
@@ -79,10 +80,10 @@ export class FirebaseService {
     } 
     this.router.navigate(['/'])
     return userRef.set(data, { merge: true })
-  }
+  };
 
   async signOut() {
     await this.afAuth.auth.signOut();
     this.router.navigate(['/auth']);
-  }
-}
+  };
+};

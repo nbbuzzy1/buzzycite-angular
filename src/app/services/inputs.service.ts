@@ -6,34 +6,34 @@ export class Inputs {
 
   constructor(public abbreviateService: AbbreviateService) {}
 
-  partyOne: string
-  partyTwo: string
-  partiesDisplay: string
-  ohioVolume: string
-  ohioReporter: string
-  ohioFirstPage: number
-  regionalVolume: number
-  regionalReporter: string
-  regionalFirstPage: number
-  year: number
-  webcite: number
-  westlaw: number
-  westlawDisplay: string = ''
-  lexis: number
-  lexisDisplay: string = ''
-  county: string
-  caseNo: string
-  district: string
-  month: string
-  day: number
-  pinpoint: string
-  pinpointDisplay: string
+  partyOne: string;
+  partyTwo: string;
+  partiesDisplay: string;
+  ohioVolume: string;
+  ohioReporter: string;
+  ohioFirstPage: number;
+  regionalVolume: number;
+  regionalReporter: string;
+  regionalFirstPage: number;
+  year: number;
+  webcite: number;
+  westlaw: number;
+  westlawDisplay: string = '';
+  lexis: number;
+  lexisDisplay: string = '';
+  county: string;
+  caseNo: string;
+  district: string;
+  month: string;
+  day: number;
+  pinpoint: string;
+  pinpointDisplay: string;
   noReset: boolean = true;
 
   abbreviatePartyOne(party) {
     const modifiedParty = this.abbreviateService.abbreviateParty(party)
     this.partyOne = modifiedParty
-  }
+  };
 
   abbreviatePartyTwo(party) {
     const modifiedParty = this.abbreviateService.abbreviateParty(party)
@@ -41,7 +41,7 @@ export class Inputs {
     if (this.partyOne && this.partyTwo) {
       this.partiesDisplay = `${this.partyOne} v. ${this.partyTwo}`
     }
-  }
+  };
 
   setWestlawDisplay(westlaw) {
     this.westlaw = westlaw
@@ -50,7 +50,7 @@ export class Inputs {
     } else {
       this.westlawDisplay = '';
     }
-  }
+  };
 
   setLexisDisplay(lexis) {
     this.lexis = lexis
@@ -59,7 +59,7 @@ export class Inputs {
     } else {
       this.lexisDisplay = '';
     }
-  }
+  };
 
   setPostPinpointDisplay() {
     if (this.pinpoint) {
@@ -67,7 +67,7 @@ export class Inputs {
     } else {
       this.pinpointDisplay = ''
     }
-  }
+  };
 
   setPrePinpointDisplay() {
     if (this.pinpoint) {
@@ -75,7 +75,7 @@ export class Inputs {
     } else {
       this.pinpointDisplay = ''
     }
-  }
+  };
 
   setWestlawLexisPinpointDisplay() {
     if (this.pinpoint) {
@@ -83,9 +83,9 @@ export class Inputs {
     } else {
       this.pinpointDisplay = ''
     }
-  }
+  };
 
-  removeCitation() {
+  removeInputs() {
     this.partyOne = '';
     this.partyTwo = '';
     this.year = null;
@@ -109,5 +109,5 @@ export class Inputs {
     this.pinpointDisplay = '';
     this.partiesDisplay = '';
     this.noReset = false;
-  }
-}
+  };
+};
