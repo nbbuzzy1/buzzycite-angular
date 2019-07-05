@@ -14,6 +14,6 @@ export class AddMonthDayComponent {
   constructor(public inputsService: Inputs) {}
 
   setMonth() {
-    this.inputsService.month = this.month.nativeElement.value
-  };
-};
+    this.inputsService.month = this.month.nativeElement.value;
+  }
+}

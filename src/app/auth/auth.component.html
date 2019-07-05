@@ -1,15 +1,17 @@
-<div  *ngIf="firebaseService.user$ | async; then authenticated else guest">
+<div  *ngIf="firebaseService.user$ | async; then authenticated else guest" class="login-container">
   <!-- template will replace this div -->
 </div>
 
-<ng-template #guest class="login-container">
-  <h1 class="loginTitle">BuzzyCite</h1>
-  <i id="loginScale" class="fas fa-lg fa-3x fa-balance-scale"></i>
-  <button class="button" (click)="firebaseService.googleSignin()">Sign In</button>
+<ng-template #guest>
+  <div class="login-container">
+      <h1 class="loginTitle">BuzzyCite</h1>
+      <i id="loginScale" class="fas fa-lg fa-3x fa-balance-scale"></i>
+      <button class="button" (click)="firebaseService.googleSignin()">Sign In</button>
+  </div>
 </ng-template>
 
 <ng-template #authenticated>
   <div *ngIf="firebaseService.user$ | async as user">
     <button class="button" (click)="firebaseService.signOut()">Logout</button>
   </div>
-</ng-template> 
+</ng-template>
