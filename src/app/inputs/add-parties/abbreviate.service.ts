@@ -1,3 +1,5 @@
+import { isNgTemplate } from '@angular/compiler';
+
 export class AbbreviateService {
   abbreviateParty(party) {
     const term = [
@@ -808,7 +810,7 @@ export class AbbreviateService {
         pluralTerm: 'westerns',
         abbTerm: 'W.',
         plTerm: 'Ws.'
-      } 
+      }
     ]
     let specialTerms = party
     .replace("also known as", "a.k.a.")
@@ -827,17 +829,13 @@ export class AbbreviateService {
     .replace("Prosecuting Attorney", "Pros. Atty.")
     .replace("savings & loan", "S. & L.")
     .replace("Savings & Loan", "S. & L.")
-    let splitParty = specialTerms.trim().split(" ");
+    const splitParty = specialTerms.trim().split(" ");
+    const abbArray = [];
     for (let i = 0; i < splitParty.length; i++) {
-      for (let y = 0; y < term.length; y++) {
-        if (splitParty[i].toLowerCase() === term[y].fullTerm) {
-          splitParty[i] = term[y].abbTerm;
-        } else if (splitParty[i].toLowerCase() === term[y].pluralTerm) {
-          splitParty[i] = term[y].plTerm;
-        };
-      };
-    };
-    let abbParty = splitParty.join(" ");
+      let result = term.filter((item) => item.fullTerm === splitParty[i]).map((answer) => answer.abbTerm);
+      result.length > 0 ? abbArray.push(result[0]) : abbArray.push(splitParty[i]);
+    }
+    const abbParty = abbArray.join(" ");
     return abbParty;
   };
 };

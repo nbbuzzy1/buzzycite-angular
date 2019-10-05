@@ -14,7 +14,7 @@ export class SortByPipe implements PipeTransform {
           if (a.date < b.date) {
             return 1;
           } else {
-            return -1
+            return -1;
           }
         });
       }
@@ -23,7 +23,7 @@ export class SortByPipe implements PipeTransform {
           if (a.type.toLowerCase() > b.type.toLowerCase()) {
             return 1;
           } else {
-            return -1
+            return -1;
           }
         });
       }
