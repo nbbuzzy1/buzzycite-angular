@@ -31,29 +31,29 @@ export class Inputs {
   noReset: boolean = true;
 
   abbreviatePartyOne(party) {
-    const modifiedParty = this.abbreviateService.abbreviateParty(party)
-    this.partyOne = modifiedParty
+    const modifiedParty = this.abbreviateService.abbreviateParty(party);
+    this.partyOne = modifiedParty;
   };
 
   abbreviatePartyTwo(party) {
-    const modifiedParty = this.abbreviateService.abbreviateParty(party)
-    this.partyTwo = modifiedParty
+    const modifiedParty = this.abbreviateService.abbreviateParty(party);
+    this.partyTwo = modifiedParty;
     if (this.partyOne && this.partyTwo) {
-      this.partiesDisplay = `${this.partyOne} v. ${this.partyTwo}`
+      this.partiesDisplay = `${this.partyOne} v. ${this.partyTwo}`;
     }
   };
 
   setWestlawDisplay(westlaw) {
-    this.westlaw = westlaw
+    this.westlaw = westlaw;
     if (this.westlaw) {
-      this.westlawDisplay = `WL ${this.westlaw}`
+      this.westlawDisplay = `WL ${this.westlaw}`;
     } else {
       this.westlawDisplay = '';
     }
   };
 
   setLexisDisplay(lexis) {
-    this.lexis = lexis
+    this.lexis = lexis;
     if (this.lexis) {
       this.lexisDisplay = `LEXIS ${this.lexis}`;
     } else {
@@ -63,25 +63,25 @@ export class Inputs {
 
   setPostPinpointDisplay() {
     if (this.pinpoint) {
-      this.pinpointDisplay = `, ¶ ${this.pinpoint}`
+      this.pinpointDisplay = `, ¶ ${this.pinpoint}`;
     } else {
-      this.pinpointDisplay = ''
+      this.pinpointDisplay = '';
     }
   };
 
   setPrePinpointDisplay() {
     if (this.pinpoint) {
-      this.pinpointDisplay = `, ${this.pinpoint}`
+      this.pinpointDisplay = `, ${this.pinpoint}`;
     } else {
-      this.pinpointDisplay = ''
+      this.pinpointDisplay = '';
     }
   };
 
   setWestlawLexisPinpointDisplay() {
     if (this.pinpoint) {
-      this.pinpointDisplay = `, *${this.pinpoint}`
+      this.pinpointDisplay = `, *${this.pinpoint}`;
     } else {
-      this.pinpointDisplay = ''
+      this.pinpointDisplay = '';
     }
   };
 
@@ -109,5 +109,5 @@ export class Inputs {
     this.pinpointDisplay = '';
     this.partiesDisplay = '';
     this.noReset = false;
-  };
-};
+  }
+}

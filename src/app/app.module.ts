@@ -26,14 +26,14 @@ import { CitationModule } from './citation/citation.module';
 import { CitationListModule } from './pages/citation-list/citation-list.module';
 
 const config = {
-  apiKey: "AIzaSyASV6YoOKhpbJuaXWreOuisDS_8Qy9HKsQ",
-  authDomain: "buzzycite-angular.firebaseapp.com",
-  databaseURL: "https://buzzycite-angular.firebaseio.com",
-  projectId: "buzzycite-angular",
-  storageBucket: "buzzycite-angular.appspot.com",
-  messagingSenderId: "168647313287",
-  appId: "1:168647313287:web:fea2b30ef32ce5a0"
-}
+  apiKey: 'AIzaSyASV6YoOKhpbJuaXWreOuisDS_8Qy9HKsQ',
+  authDomain: 'buzzycite-angular.firebaseapp.com',
+  databaseURL: 'https://buzzycite-angular.firebaseio.com',
+  projectId: 'buzzycite-angular',
+  storageBucket: 'buzzycite-angular.appspot.com',
+  messagingSenderId: '168647313287',
+  appId: '1:168647313287:web:fea2b30ef32ce5a0'
+};
 
 @NgModule({
   declarations: [
@@ -57,8 +57,8 @@ const config = {
     CitationListModule,
     SharedModule,
     AngularFireModule.initializeApp(config),
-    AngularFirestoreModule.enablePersistence(), 
-    AngularFireAuthModule, 
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
   ],
   providers: [Inputs, AbbreviateService, CitationService, FirebaseService, AuthGuard],
   bootstrap: [AppComponent],
